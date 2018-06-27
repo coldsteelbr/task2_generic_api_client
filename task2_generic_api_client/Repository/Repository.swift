@@ -9,11 +9,14 @@
 import Foundation
 
 class Repository {
-    func getVacanciesForRequest(_ request: Request, with completion: ([Vacancy])->()) {
-        
+    func getVacanciesForRequest(_ request: Request, with completion: (RequestResult)->()) {
+        // Executing request in separate thread
+        // and then calling completion()
     }
     
     func getAllFavorites(with completion: ([Vacancy])->()) {
-        
+        // trying to get everything from favorites
+        // in a separate thread
+        // then calling completion()
     }
 }

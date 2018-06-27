@@ -11,11 +11,14 @@
 		30096DF620E0E0EB00E25BC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30096DF420E0E0EB00E25BC3 /* Main.storyboard */; };
 		30096DF820E0E0EF00E25BC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30096DF720E0E0EF00E25BC3 /* Assets.xcassets */; };
 		30096DFB20E0E0EF00E25BC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30096DF920E0E0EF00E25BC3 /* LaunchScreen.storyboard */; };
+		30256A8120E33DF60096774D /* InMemoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30256A8020E33DF50096774D /* InMemoryRequest.swift */; };
 		304324B420E221CA00220E16 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304324B320E221CA00220E16 /* Repository.swift */; };
 		304324B620E2220A00220E16 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304324B520E2220A00220E16 /* Request.swift */; };
 		304324BB20E229D900220E16 /* Vacancy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304324BA20E229D900220E16 /* Vacancy.swift */; };
 		304324BD20E229F000220E16 /* Employer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304324BC20E229F000220E16 /* Employer.swift */; };
 		304324C020E23A9900220E16 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304324BF20E23A9900220E16 /* Utils.swift */; };
+		304324C520E2451000220E16 /* VacancyBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304324C420E2451000220E16 /* VacancyBank.swift */; };
+		3079B81820E28A4700A50D6A /* RequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3079B81720E28A4700A50D6A /* RequestResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,11 +28,14 @@
 		30096DF720E0E0EF00E25BC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30096DFA20E0E0EF00E25BC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30096DFC20E0E0EF00E25BC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30256A8020E33DF50096774D /* InMemoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryRequest.swift; sourceTree = "<group>"; };
 		304324B320E221CA00220E16 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		304324B520E2220A00220E16 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		304324BA20E229D900220E16 /* Vacancy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vacancy.swift; sourceTree = "<group>"; };
 		304324BC20E229F000220E16 /* Employer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employer.swift; sourceTree = "<group>"; };
 		304324BF20E23A9900220E16 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		304324C420E2451000220E16 /* VacancyBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyBank.swift; sourceTree = "<group>"; };
+		3079B81720E28A4700A50D6A /* RequestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,15 +68,14 @@
 		30096DEF20E0E0EB00E25BC3 /* task2_generic_api_client */ = {
 			isa = PBXGroup;
 			children = (
+				304324C220E23FF300220E16 /* misc */,
 				304324BE20E23A8900220E16 /* Utils */,
 				304324B920E229CC00220E16 /* Domain */,
 				304324B820E2225600220E16 /* VacancyDetail */,
 				304324B720E2224700220E16 /* VacancyList */,
+				304324C120E23FC300220E16 /* EmployerDetail */,
 				304324B220E221A200220E16 /* Repository */,
-				30096DF020E0E0EB00E25BC3 /* AppDelegate.swift */,
 				30096DF420E0E0EB00E25BC3 /* Main.storyboard */,
-				30096DF720E0E0EF00E25BC3 /* Assets.xcassets */,
-				30096DF920E0E0EF00E25BC3 /* LaunchScreen.storyboard */,
 				30096DFC20E0E0EF00E25BC3 /* Info.plist */,
 			);
 			path = task2_generic_api_client;
@@ -79,8 +84,10 @@
 		304324B220E221A200220E16 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				304324C320E2446000220E16 /* In-Memory */,
 				304324B320E221CA00220E16 /* Repository.swift */,
 				304324B520E2220A00220E16 /* Request.swift */,
+				3079B81720E28A4700A50D6A /* RequestResult.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -114,6 +121,32 @@
 				304324BF20E23A9900220E16 /* Utils.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		304324C120E23FC300220E16 /* EmployerDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EmployerDetail;
+			sourceTree = "<group>";
+		};
+		304324C220E23FF300220E16 /* misc */ = {
+			isa = PBXGroup;
+			children = (
+				30096DF020E0E0EB00E25BC3 /* AppDelegate.swift */,
+				30096DF720E0E0EF00E25BC3 /* Assets.xcassets */,
+				30096DF920E0E0EF00E25BC3 /* LaunchScreen.storyboard */,
+			);
+			path = misc;
+			sourceTree = "<group>";
+		};
+		304324C320E2446000220E16 /* In-Memory */ = {
+			isa = PBXGroup;
+			children = (
+				304324C420E2451000220E16 /* VacancyBank.swift */,
+				30256A8020E33DF50096774D /* InMemoryRequest.swift */,
+			);
+			path = "In-Memory";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,9 +222,12 @@
 			files = (
 				30096DF120E0E0EB00E25BC3 /* AppDelegate.swift in Sources */,
 				304324BB20E229D900220E16 /* Vacancy.swift in Sources */,
+				304324C520E2451000220E16 /* VacancyBank.swift in Sources */,
 				304324B620E2220A00220E16 /* Request.swift in Sources */,
 				304324BD20E229F000220E16 /* Employer.swift in Sources */,
 				304324B420E221CA00220E16 /* Repository.swift in Sources */,
+				30256A8120E33DF60096774D /* InMemoryRequest.swift in Sources */,
+				3079B81820E28A4700A50D6A /* RequestResult.swift in Sources */,
 				304324C020E23A9900220E16 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
