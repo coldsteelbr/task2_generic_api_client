@@ -8,15 +8,56 @@
 
 import UIKit
 
-class VacancyListVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+protocol VacancyListViewProtocol: UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate  {
+    var vacancyArray: [Vacancy] {get set}
+    var searchText: String {get}
+    
+    var hasConnection: Bool {get}
+    var isBusy: Bool {get}
+    
+    //
+    //  View Commands
+    //
+    
+    func showVacancyDetailFor(vacancy: Vacancy)
+    func showErrorAlert(title:String, message:String)
+    
+    func update(vacancyArray:[Vacancy])
+}
+
+class VacancyListVC: UIViewController, VacancyListViewProtocol{
+    func update(vacancyArray: [Vacancy]) {
+        self.vacancyArray = vacancyArray
+    }
+    
+    var hasConnection: Bool = false
+    
+    var isBusy: Bool = false
+    
+    func showVacancyDetailFor(vacancy: Vacancy) {
+        // TODO: segue to detail view
+        print("\(#function): TBD")
+    }
+    
+    func showErrorAlert(title:String, message:String) {
+        // TODO: showing alert with messages
+        print("\(#function): TBD")
+    }
+    
+    var searchText: String {
+        get {
+            return searchBar.text!
+        }
+    }
+    
+    // Controls the view
+    var presenter: VacancyListPresenter?
+    
     //
     //  OUTLETS
     //
     @IBOutlet var tableView: UITableView!
     @IBOutlet var searchBar: UISearchBar!
-    
-    /// Repository provides data
-    var repository: Repository?
     
     /// Data to be shown in the table view
     var vacancyArray = [Vacancy]() {
@@ -39,11 +80,21 @@ class VacancyListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // TODO: Subscribe?
+        
         // listening for keyboard events
         // to know when it appear in the screen and goes away
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // TODO: Update data?
+        // attaching
+        presenter?.attach(View: self)
     }
     
     deinit {
@@ -104,26 +155,7 @@ class VacancyListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         dismissKeyboard()
         
         
-        //
-        //  Creating a request
-        //
-        let request = InMemoryRequest(filter: searchBar.text!, field: "title")
-        
-        //
-        //  Sending request
-        //
-        repository!.getVacanciesForRequest(request) {
-            (result) in
-            DispatchQueue.main.async {
-                switch(result) {
-                case let .success(resultArray):
-                    self.vacancyArray = resultArray
-                case let .error(error):
-                    print("Error: \(error)")
-                }
-            }
-            
-        }
+        presenter?.searchWith(searchString: searchBar.text!)
         
     }
     

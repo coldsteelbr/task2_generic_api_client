@@ -11,6 +11,7 @@
 		30096DF620E0E0EB00E25BC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30096DF420E0E0EB00E25BC3 /* Main.storyboard */; };
 		30096DF820E0E0EF00E25BC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30096DF720E0E0EF00E25BC3 /* Assets.xcassets */; };
 		30096DFB20E0E0EF00E25BC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30096DF920E0E0EF00E25BC3 /* LaunchScreen.storyboard */; };
+		301EE6C320E3B3290041FCD2 /* VacancyListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301EE6C220E3B3290041FCD2 /* VacancyListPresenter.swift */; };
 		30256A8120E33DF60096774D /* InMemoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30256A8020E33DF50096774D /* InMemoryRequest.swift */; };
 		30256A8320E340BD0096774D /* VacancyListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30256A8220E340BD0096774D /* VacancyListVC.swift */; };
 		304324B420E221CA00220E16 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304324B320E221CA00220E16 /* Repository.swift */; };
@@ -30,6 +31,7 @@
 		30096DF720E0E0EF00E25BC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30096DFA20E0E0EF00E25BC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30096DFC20E0E0EF00E25BC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		301EE6C220E3B3290041FCD2 /* VacancyListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyListPresenter.swift; sourceTree = "<group>"; };
 		30256A8020E33DF50096774D /* InMemoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryRequest.swift; sourceTree = "<group>"; };
 		30256A8220E340BD0096774D /* VacancyListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyListVC.swift; sourceTree = "<group>"; };
 		304324B320E221CA00220E16 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 			children = (
 				30256A8220E340BD0096774D /* VacancyListVC.swift */,
 				30FB003C20E3460E00E4D6A2 /* VacancyCell.swift */,
+				301EE6C220E3B3290041FCD2 /* VacancyListPresenter.swift */,
 			);
 			path = VacancyList;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				304324B420E221CA00220E16 /* Repository.swift in Sources */,
 				30256A8120E33DF60096774D /* InMemoryRequest.swift in Sources */,
 				3079B81820E28A4700A50D6A /* RequestResult.swift in Sources */,
+				301EE6C320E3B3290041FCD2 /* VacancyListPresenter.swift in Sources */,
 				304324C020E23A9900220E16 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
