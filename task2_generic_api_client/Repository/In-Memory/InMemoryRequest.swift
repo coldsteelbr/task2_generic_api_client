@@ -22,7 +22,7 @@ class InMemoryRequest: Request {
     func execute(with completion: @escaping (RequestResult) -> Void) {
         DispatchQueue.global(qos: .userInteractive).async {
             let resultArray = VacancyBank.getInstance().getVacancies(For: self.filter, in: self.field)
-            sleep(20)
+            sleep(5)
             completion(RequestResult.success(resultArray))
         }
     }

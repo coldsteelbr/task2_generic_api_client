@@ -9,9 +9,19 @@
 import Foundation
 
 class Repository {
-    func getVacanciesForRequest(_ request: Request, with completion: (RequestResult)->()) {
+    
+    
+    
+    func getVacanciesForRequest(_ request: Request, with completion: @escaping (RequestResult)->()) {
         // Executing request in separate thread
         // and then calling completion()
+        request.execute {
+            (result) in
+            
+            DispatchQueue.global(qos: .userInteractive).async {
+                completion(result)
+            }
+        }
     }
     
     func getAllFavorites(with completion: ([Vacancy])->()) {

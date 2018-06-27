@@ -289,6 +289,9 @@
                                     <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="AMm-fj-2Kj">
                                         <rect key="frame" x="0.0" y="460" width="375" height="94"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="3SR-6p-UBT" id="Ik2-t4-Tpi"/>
+                                        </connections>
                                     </searchBar>
                                 </subviews>
                             </stackView>
@@ -304,6 +307,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="L7C-jy-lCW"/>
                     <connections>
+                        <outlet property="searchBar" destination="AMm-fj-2Kj" id="aV3-0Z-Oyj"/>
                         <outlet property="tableView" destination="1ed-FA-Apr" id="4Wk-bj-rCg"/>
                     </connections>
                 </viewController>

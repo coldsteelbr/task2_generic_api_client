@@ -26,7 +26,7 @@ class VacancyBank {
     }
     
     private init(){
-        for _ in 1...15 {
+        for _ in 1...30 {
             vacancies.append(Vacancy.init(random: true))
         }
     }

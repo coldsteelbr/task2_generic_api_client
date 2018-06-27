@@ -16,6 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //
+        //  IoC
+        //
+        let navVC = window!.rootViewController as! UINavigationController
+        let tabVC = navVC.topViewController as! UITabBarController
+        let vacancyListVC = tabVC.viewControllers![0] as! VacancyListVC
+        
+        vacancyListVC.repository = Repository()
+        
         return true
     }
 
