@@ -8,24 +8,8 @@
 
 import UIKit
 
-protocol VacancyListViewProtocol: UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate  {
-    var vacancyArray: [Vacancy] {get set}
-    var searchText: String {get}
-    
-    var hasConnection: Bool {get}
-    var isBusy: Bool {get}
-    
-    //
-    //  View Commands
-    //
-    
-    func showVacancyDetailFor(vacancy: Vacancy)
-    func showErrorAlert(title:String, message:String)
-    
-    func update(vacancyArray:[Vacancy])
-}
 
-class VacancyListVC: UIViewController, VacancyListViewProtocol{
+class VacancyListVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, VacancyListViewProtocol{
     func update(vacancyArray: [Vacancy]) {
         self.vacancyArray = vacancyArray
     }

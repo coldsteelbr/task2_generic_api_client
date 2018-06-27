@@ -8,26 +8,18 @@
 
 import Foundation
 
-class VacancyListPresenter {
+class VacancyListPresenter: BasePresenter<VacancyListVC> {
     
     var repository: Repository?
     
-    var view: VacancyListViewProtocol?
     var vacancyArray: [Vacancy]!
     
-    func attach(View view: VacancyListViewProtocol){
-        self.view = view
-    }
-    
-    func detach(View view: VacancyListViewProtocol) {
-        self.view = nil
-    }
     
     private func updateViews(){
         view?.update(vacancyArray: vacancyArray)
     }
     
-    func searchWith(searchString :String){
+    func searchWith(searchString: String){
         //
         //  Creating a request
         //
