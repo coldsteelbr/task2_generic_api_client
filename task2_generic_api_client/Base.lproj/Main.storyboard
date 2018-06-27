@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="73" id="i0F-hM-QDa">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StandardCell" rowHeight="73" id="i0F-hM-QDa">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="73"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="i0F-hM-QDa" id="jaF-4n-7BM">
@@ -69,6 +69,9 @@
                                                         <constraint firstItem="KZM-fy-isR" firstAttribute="top" secondItem="jaF-4n-7BM" secondAttribute="top" constant="4" id="wAQ-gk-xyA"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <segue destination="0Bz-3V-F8K" kind="show" identifier="VacancyDetailFromFavorites" id="D5L-yB-qfX"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
@@ -85,9 +88,6 @@
                         <viewLayoutGuide key="safeArea" id="Ldk-BK-scu"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="tUa-YN-yIM"/>
-                    <connections>
-                        <segue destination="0Bz-3V-F8K" kind="show" id="RR6-yx-JjI"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kwX-yK-HU5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -162,7 +162,7 @@
                         <viewLayoutGuide key="safeArea" id="t7K-Al-AbW"/>
                     </view>
                     <connections>
-                        <segue destination="L2e-aa-O6N" kind="show" id="qKa-tK-E39"/>
+                        <segue destination="L2e-aa-O6N" kind="show" identifier="EmployerDetail" id="qKa-tK-E39"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b7u-1S-EFb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -215,10 +215,10 @@
             </objects>
             <point key="canvasLocation" x="2820" y="109"/>
         </scene>
-        <!--View Controller-->
+        <!--Vacancy ListVC-->
         <scene sceneID="jty-Ls-QDI">
             <objects>
-                <viewController id="3SR-6p-UBT" sceneMemberID="viewController">
+                <viewController id="3SR-6p-UBT" customClass="VacancyListVC" customModule="task2_generic_api_client" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9QN-3L-4fO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -230,7 +230,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="452"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="73" id="Abz-xc-VbL">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StandardCell" rowHeight="73" id="Abz-xc-VbL" customClass="VacancyCell" customModule="task2_generic_api_client" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="73"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Abz-xc-VbL" id="XOI-AZ-Caz">
@@ -249,13 +249,13 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RT0-z9-ie2">
                                                                     <rect key="frame" x="78" y="0.0" width="289" height="64.5"/>
                                                                     <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZL-oX-lwn">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZL-oX-lwn" userLabel="Title">
                                                                             <rect key="frame" x="0.0" y="0.0" width="289" height="44"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="25h-e9-W0g">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="25h-e9-W0g" userLabel="Description">
                                                                             <rect key="frame" x="0.0" y="44" width="289" height="20.5"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <nil key="textColor"/>
@@ -274,10 +274,17 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
-                                                    <segue destination="0Bz-3V-F8K" kind="show" id="Rhg-V3-qGA"/>
+                                                    <outlet property="descriptionLabel" destination="25h-e9-W0g" id="B86-c7-DKv"/>
+                                                    <outlet property="employerLogoImage" destination="TPd-kt-NgS" id="f2t-OD-ahf"/>
+                                                    <outlet property="titleLabel" destination="YZL-oX-lwn" id="QWI-Qi-kWy"/>
+                                                    <segue destination="0Bz-3V-F8K" kind="show" identifier="VacancyDetailFromList" id="ujO-mT-HBy"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="3SR-6p-UBT" id="UWz-2f-3A4"/>
+                                            <outlet property="delegate" destination="3SR-6p-UBT" id="QeQ-VV-Cmj"/>
+                                        </connections>
                                     </tableView>
                                     <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="AMm-fj-2Kj">
                                         <rect key="frame" x="0.0" y="460" width="375" height="94"/>
@@ -296,6 +303,9 @@
                         <viewLayoutGuide key="safeArea" id="20B-Ai-pIx"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="search" id="L7C-jy-lCW"/>
+                    <connections>
+                        <outlet property="tableView" destination="1ed-FA-Apr" id="4Wk-bj-rCg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yMm-Po-lDX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -328,8 +338,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="3SR-6p-UBT" kind="relationship" relationship="viewControllers" id="oT2-2P-A55"/>
-                        <segue destination="6tj-53-U0y" kind="relationship" relationship="viewControllers" id="Luu-hu-6fy"/>
+                        <segue destination="3SR-6p-UBT" kind="relationship" relationship="viewControllers" id="act-Ee-OnX"/>
+                        <segue destination="6tj-53-U0y" kind="relationship" relationship="viewControllers" id="qBX-WD-GrA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yu5-KK-RDV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -338,6 +348,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="RR6-yx-JjI"/>
+        <segue reference="ujO-mT-HBy"/>
     </inferredMetricsTieBreakers>
 </document>
