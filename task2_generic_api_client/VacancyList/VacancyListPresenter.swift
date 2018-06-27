@@ -12,10 +12,9 @@ class VacancyListPresenter: BasePresenter<VacancyListVC> {
     
     var repository: Repository?
     
-    var vacancyArray: [Vacancy]!
+    var vacancyArray: [Vacancy]?
     
-    
-    private func updateViews(){
+    override func sendNotifications() {
         view?.update(vacancyArray: vacancyArray)
     }
     
@@ -34,7 +33,7 @@ class VacancyListPresenter: BasePresenter<VacancyListVC> {
                 switch(result) {
                 case let .success(resultArray):
                     self.vacancyArray = resultArray
-                    self.view?.update(vacancyArray: self.vacancyArray)
+                    self.sendNotifications()
                 case let .error(error):
                     print("Error: \(error)")
                     self.view?.showErrorAlert(title: "Error", message: error as! String)

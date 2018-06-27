@@ -11,11 +11,18 @@ import Foundation
 class BasePresenter<V: BaseViewProtocol> {
     var view: V?
     
-    func attach(View view: V){
+    func attach(View view: V, Updating:Bool){
         self.view = view
+        if Updating {
+            sendNotifications()
+        }
     }
     
     func detach(View view: V) {
         self.view = nil
+    }
+    
+    func sendNotifications() {
+        fatalError("\(#function) must be implemented")
     }
 }

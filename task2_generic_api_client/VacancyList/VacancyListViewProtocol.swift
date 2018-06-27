@@ -24,5 +24,5 @@ protocol VacancyListViewProtocol: BaseViewProtocol {
     //
     // Observer
     //
-    func update(vacancyArray:[Vacancy])
+    func update(vacancyArray:[Vacancy]?)
 }

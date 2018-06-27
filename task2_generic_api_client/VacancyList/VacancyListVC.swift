@@ -10,8 +10,10 @@ import UIKit
 
 
 class VacancyListVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, VacancyListViewProtocol{
-    func update(vacancyArray: [Vacancy]) {
-        self.vacancyArray = vacancyArray
+    func update(vacancyArray: [Vacancy]?) {
+        if let unWrappedArray = vacancyArray {
+            self.vacancyArray = unWrappedArray
+        }
     }
     
     var hasConnection: Bool = false
@@ -78,7 +80,13 @@ class VacancyListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         
         // TODO: Update data?
         // attaching
-        presenter?.attach(View: self)
+        presenter?.attach(View: self, Updating: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        presenter?.detach(View: self)
     }
     
     deinit {
