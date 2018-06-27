@@ -29,12 +29,15 @@ class VacancyListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         request.execute {
             (result) in
             
-            switch(result) {
-            case let .success(resultArray):
-                self.vacancyArray = resultArray
-            case let .error(error):
-                print("Error: \(error)")
+            DispatchQueue.main.async {
+                switch(result) {
+                case let .success(resultArray):
+                    self.vacancyArray = resultArray
+                case let .error(error):
+                    print("Error: \(error)")
+                }
             }
+            
         }
     }
     

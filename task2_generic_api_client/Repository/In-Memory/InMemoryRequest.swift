@@ -20,9 +20,11 @@ class InMemoryRequest: Request {
     
     /// Gets vacancies from the in-memory bank
     func execute(with completion: @escaping (RequestResult) -> Void) {
-        let resultArray = VacancyBank.getInstance().getVacancies(For: filter, in: field)
-        
-        completion(RequestResult.success(resultArray))
+        DispatchQueue.global(qos: .userInteractive).async {
+            let resultArray = VacancyBank.getInstance().getVacancies(For: self.filter, in: self.field)
+            sleep(20)
+            completion(RequestResult.success(resultArray))
+        }
     }
     
 }
