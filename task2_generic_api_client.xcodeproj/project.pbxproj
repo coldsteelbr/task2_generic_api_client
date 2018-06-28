@@ -108,6 +108,16 @@
 			path = base;
 			sourceTree = "<group>";
 		};
+		302385C220E4D7E7006110A1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				30256A8220E340BD0096774D /* VacancyListVC.swift */,
+				30FB003C20E3460E00E4D6A2 /* VacancyCell.swift */,
+				301EE6C420E3D7A80041FCD2 /* VacancyListViewProtocol.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		304324B220E221A200220E16 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,10 +132,8 @@
 		304324B720E2224700220E16 /* VacancyList */ = {
 			isa = PBXGroup;
 			children = (
-				30256A8220E340BD0096774D /* VacancyListVC.swift */,
-				30FB003C20E3460E00E4D6A2 /* VacancyCell.swift */,
+				302385C220E4D7E7006110A1 /* View */,
 				301EE6C220E3B3290041FCD2 /* VacancyListPresenter.swift */,
-				301EE6C420E3D7A80041FCD2 /* VacancyListViewProtocol.swift */,
 				302385C020E4B43A006110A1 /* VacancyListInteractor.swift */,
 			);
 			path = VacancyList;

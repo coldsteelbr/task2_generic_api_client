@@ -11,17 +11,24 @@ import UIKit
 
 class VacancyListVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, VacancyListViewProtocol{
     
+    //
+    //  Observer
+    //
     func update() {
         if let unWrappedArray = presenter?.vacancyArray {
             self.vacancyArray = unWrappedArray
         }
     }
     
+    //
+    //  Commands
+    //
+    ///
     func showVacancyDetailFor(vacancy: Vacancy) {
         // TODO: segue to detail view
         print("\(#function): TBD")
     }
-    
+    ///
     func showErrorAlert(title:String, message:String) {
         // TODO: showing alert with messages
         print("\(#function): TBD")
