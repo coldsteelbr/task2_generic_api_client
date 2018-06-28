@@ -9,12 +9,12 @@
 import UIKit
 
 
-class VacancyListVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, VacancyListViewProtocol{
+class VacancyListVC: BaseSceenView, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, VacancyListViewProtocol{
     
     //
     //  Observer
     //
-    func update() {
+    override func update() {
         if let unWrappedArray = presenter?.vacancyArray {
             self.vacancyArray = unWrappedArray
         }
@@ -30,29 +30,25 @@ class VacancyListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         print("\(#function): TBD")
     }
     
-    /// Shows an alert with "Okay" button, title and message
-    func showErrorAlert(title:String, message:String) {
-        // building and showing an alert
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
-        present(alert, animated: true)
-    }
     
-    ///
+    
+    /// Controls the business indicator's state (on/off)
     func businessIndicator(Turn state: IndicatorStates) {
         switch state {
         case .On:
+            // showing and animating
             spinner.isHidden = false
             spinner.startAnimating()
             break
         case .Off:
+            // hiding and stopping
             spinner.isHidden = true
             spinner.stopAnimating()
             break
         }
     }
     
-    /// represent a search request string
+    /// represents a search request string
     var searchText: String {
         get {
             return searchBar.text!
@@ -128,6 +124,24 @@ class VacancyListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "showVacancyDetailFromList":
+            if let row = tableView.indexPathForSelectedRow?.row {
+                let vacancy = vacancyArray[row]
+                let detailVacancyVC = segue.destination as! DetailVacancyVC
+                detailVacancyVC.vacancy = vacancy
+            }
+        default:
+            print("No such a segue: \(String(describing: segue.identifier))")
+        }
+    }
+    
+    //
+    //  LOGIC
+    //
+    
     
     /// Reacts to keyboard view changes
     /// to shift the view and avoid overlapping

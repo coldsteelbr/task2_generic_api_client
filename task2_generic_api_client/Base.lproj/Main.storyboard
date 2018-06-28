@@ -70,7 +70,7 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
-                                                    <segue destination="0Bz-3V-F8K" kind="show" identifier="VacancyDetailFromFavorites" id="D5L-yB-qfX"/>
+                                                    <segue destination="0Bz-3V-F8K" kind="show" identifier="showVacancyDetailFromFavorites" id="D5L-yB-qfX"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -93,10 +93,10 @@
             </objects>
             <point key="canvasLocation" x="1020" y="410"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail VacancyVC-->
         <scene sceneID="myA-uO-DIq">
             <objects>
-                <viewController id="0Bz-3V-F8K" sceneMemberID="viewController">
+                <viewController id="0Bz-3V-F8K" customClass="DetailVacancyVC" customModule="task2_generic_api_client" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ozP-55-X3b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -109,9 +109,8 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="83c-b1-WY4"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vacancy Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vzW-ot-GMR">
-                                <rect key="frame" x="129" y="80" width="103" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vacancy Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vzW-ot-GMR">
+                                <rect key="frame" x="129" y="80" width="238" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -123,9 +122,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Employer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TaF-FB-7En">
-                                <rect key="frame" x="129" y="159" width="72" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TaF-FB-7En">
+                                <rect key="frame" x="129" y="159" width="238" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -139,9 +137,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Salary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCm-zv-jgG">
-                                <rect key="frame" x="129" y="120" width="48" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCm-zv-jgG">
+                                <rect key="frame" x="129" y="120" width="238" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -150,11 +147,20 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="xQW-ze-8Qi" firstAttribute="leading" secondItem="Zko-GV-e3B" secondAttribute="leading" id="6q8-sP-RvE"/>
+                            <constraint firstItem="XCm-zv-jgG" firstAttribute="leading" secondItem="vzW-ot-GMR" secondAttribute="leading" id="8nw-O0-C0N"/>
+                            <constraint firstItem="t7K-Al-AbW" firstAttribute="trailing" secondItem="TaF-FB-7En" secondAttribute="trailing" constant="8" id="96Q-et-vZN"/>
+                            <constraint firstItem="vzW-ot-GMR" firstAttribute="top" secondItem="Zko-GV-e3B" secondAttribute="top" id="B4K-Xb-zAU"/>
                             <constraint firstItem="Zko-GV-e3B" firstAttribute="top" secondItem="t7K-Al-AbW" secondAttribute="top" constant="16" id="GpC-oy-ElK"/>
                             <constraint firstItem="Scr-DQ-unu" firstAttribute="leading" secondItem="Zko-GV-e3B" secondAttribute="leading" id="Hsy-X5-9aO"/>
                             <constraint firstItem="Zko-GV-e3B" firstAttribute="leading" secondItem="t7K-Al-AbW" secondAttribute="leading" constant="16" id="IHh-Uo-w6A"/>
+                            <constraint firstItem="t7K-Al-AbW" firstAttribute="trailing" secondItem="vzW-ot-GMR" secondAttribute="trailing" constant="8" id="JsL-hA-h3u"/>
+                            <constraint firstItem="XCm-zv-jgG" firstAttribute="top" secondItem="vzW-ot-GMR" secondAttribute="bottom" constant="19" id="JvZ-8C-q1h"/>
                             <constraint firstItem="xQW-ze-8Qi" firstAttribute="top" secondItem="Scr-DQ-unu" secondAttribute="bottom" constant="8" id="MNG-5n-RSa"/>
+                            <constraint firstItem="t7K-Al-AbW" firstAttribute="trailing" secondItem="XCm-zv-jgG" secondAttribute="trailing" constant="8" id="OgH-i3-yFS"/>
                             <constraint firstItem="xQW-ze-8Qi" firstAttribute="trailing" secondItem="ozP-55-X3b" secondAttribute="trailingMargin" id="TB5-Yl-b2e"/>
+                            <constraint firstItem="TaF-FB-7En" firstAttribute="leading" secondItem="XCm-zv-jgG" secondAttribute="leading" id="dzl-8O-wwO"/>
+                            <constraint firstItem="vzW-ot-GMR" firstAttribute="leading" secondItem="Zko-GV-e3B" secondAttribute="trailing" constant="8" id="mdJ-ur-dBv"/>
+                            <constraint firstItem="TaF-FB-7En" firstAttribute="top" secondItem="XCm-zv-jgG" secondAttribute="bottom" constant="18" id="oL1-2L-JYi"/>
                             <constraint firstItem="t7K-Al-AbW" firstAttribute="bottom" secondItem="xQW-ze-8Qi" secondAttribute="bottom" constant="8" id="qTB-UG-01z"/>
                             <constraint firstItem="Scr-DQ-unu" firstAttribute="top" secondItem="Zko-GV-e3B" secondAttribute="bottom" constant="8" id="uuo-Nd-mTM"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Scr-DQ-unu" secondAttribute="trailing" constant="20" symbolic="YES" id="wPt-3j-p2W"/>
@@ -162,6 +168,12 @@
                         <viewLayoutGuide key="safeArea" id="t7K-Al-AbW"/>
                     </view>
                     <connections>
+                        <outlet property="emplyersLogo" destination="Zko-GV-e3B" id="4nx-OC-F2u"/>
+                        <outlet property="vacancyDate" destination="Scr-DQ-unu" id="eZz-9X-bq0"/>
+                        <outlet property="vacancyDescription" destination="xQW-ze-8Qi" id="IPu-UT-ZK4"/>
+                        <outlet property="vacancyEmployer" destination="TaF-FB-7En" id="LQw-y8-gTI"/>
+                        <outlet property="vacancySalaryLabel" destination="XCm-zv-jgG" id="4N5-jl-zkf"/>
+                        <outlet property="vacancyTitle" destination="vzW-ot-GMR" id="uVp-1P-tRS"/>
                         <segue destination="L2e-aa-O6N" kind="show" identifier="EmployerDetail" id="qKa-tK-E39"/>
                     </connections>
                 </viewController>
@@ -280,7 +292,7 @@
                                                     <outlet property="descriptionLabel" destination="25h-e9-W0g" id="B86-c7-DKv"/>
                                                     <outlet property="employerLogoImage" destination="TPd-kt-NgS" id="f2t-OD-ahf"/>
                                                     <outlet property="titleLabel" destination="YZL-oX-lwn" id="QWI-Qi-kWy"/>
-                                                    <segue destination="0Bz-3V-F8K" kind="show" identifier="VacancyDetailFromList" id="ujO-mT-HBy"/>
+                                                    <segue destination="0Bz-3V-F8K" kind="show" identifier="showVacancyDetailFromList" id="ujO-mT-HBy"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -356,6 +368,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ujO-mT-HBy"/>
+        <segue reference="D5L-yB-qfX"/>
     </inferredMetricsTieBreakers>
 </document>
