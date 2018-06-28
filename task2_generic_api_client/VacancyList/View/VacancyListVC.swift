@@ -21,24 +21,45 @@ class VacancyListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     }
     
     //
-    //  Commands
+    //  VacancyListViewProtocol
     //
+    
     ///
     func showVacancyDetailFor(vacancy: Vacancy) {
         // TODO: segue to detail view
         print("\(#function): TBD")
     }
+    
     ///
     func showErrorAlert(title:String, message:String) {
         // TODO: showing alert with messages
         print("\(#function): TBD")
     }
     
+    ///
+    func businessIndicator(Turn state: IndicatorStates) {
+        switch state {
+        case .On:
+            spinner.isHidden = false
+            spinner.startAnimating()
+            break
+        case .Off:
+            spinner.isHidden = true
+            spinner.stopAnimating()
+            break
+        }
+    }
+    
+    /// represent a search request string
     var searchText: String {
         get {
             return searchBar.text!
         }
     }
+    
+    //
+    //  Concrete VC
+    //
     
     // Controls the view
     var presenter: VacancyListPresenter?
@@ -48,6 +69,11 @@ class VacancyListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     //
     @IBOutlet var tableView: UITableView!
     @IBOutlet var searchBar: UISearchBar!
+    @IBOutlet var spinner: UIActivityIndicatorView!
+    
+    //
+    // Field & Properties
+    //
     
     /// Data to be shown in the table view
     var vacancyArray = [Vacancy]() {
@@ -63,14 +89,17 @@ class VacancyListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         }
     }
     
+
     //
     //  LIFECYCLE
     //
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // TODO: Subscribe?
+        //
+        //  Spinner
+        //
+        spinner.isHidden = true
         
         // listening for keyboard events
         // to know when it appear in the screen and goes away
@@ -82,7 +111,6 @@ class VacancyListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // TODO: Update data?
         // attaching
         presenter?.attachView(self, updating: true)
     }

@@ -226,8 +226,11 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MCx-EP-nhY">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="9K5-TB-hcJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                    </activityIndicatorView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="254" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1ed-FA-Apr">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="452"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="445"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StandardCell" rowHeight="73" id="Abz-xc-VbL" customClass="VacancyCell" customModule="task2_generic_api_client" customModuleProvider="target">
@@ -287,7 +290,7 @@
                                         </connections>
                                     </tableView>
                                     <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="AMm-fj-2Kj">
-                                        <rect key="frame" x="0.0" y="460" width="375" height="94"/>
+                                        <rect key="frame" x="0.0" y="481" width="375" height="73"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
                                             <outlet property="delegate" destination="3SR-6p-UBT" id="Ik2-t4-Tpi"/>
@@ -308,6 +311,7 @@
                     <tabBarItem key="tabBarItem" systemItem="search" id="L7C-jy-lCW"/>
                     <connections>
                         <outlet property="searchBar" destination="AMm-fj-2Kj" id="aV3-0Z-Oyj"/>
+                        <outlet property="spinner" destination="9K5-TB-hcJ" id="rak-qP-5Ga"/>
                         <outlet property="tableView" destination="1ed-FA-Apr" id="4Wk-bj-rCg"/>
                     </connections>
                 </viewController>

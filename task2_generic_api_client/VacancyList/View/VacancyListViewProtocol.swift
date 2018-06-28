@@ -8,6 +8,11 @@
 
 import Foundation
 
+enum IndicatorStates{
+    case On
+    case Off
+}
+
 protocol VacancyListViewProtocol: BaseViewProtocol {
     var vacancyArray: [Vacancy] {get set}
     var searchText: String {get}
@@ -17,6 +22,10 @@ protocol VacancyListViewProtocol: BaseViewProtocol {
     //
     
     func showVacancyDetailFor(vacancy: Vacancy)
+    
+    /// Turns on and off business indicator (like spinner)
+    func businessIndicator(Turn state: IndicatorStates)
+    
     
     //
     // Observer

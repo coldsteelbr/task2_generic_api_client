@@ -23,7 +23,7 @@ class InMemoryRequest: Request {
         DispatchQueue.global(qos: .userInteractive).async {
             print("\(#function) Searching for \(self.filter) in vacancy bank")
             let resultArray = VacancyBank.getInstance().getVacancies(For: self.filter, in: self.field)
-            sleep(1)
+            sleep(3)
             completion(RequestResult.success(resultArray))
         }
     }

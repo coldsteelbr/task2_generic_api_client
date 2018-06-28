@@ -21,7 +21,7 @@ class VacancyListPresenter: BasePresenter<VacancyListVC> {
     }
     
     func searchWith(searchString: String){
-        
+        view?.businessIndicator(Turn: .On)
         (interactor as! VacancyListInteractor).searchWith(searchString: searchString) {
             (result) in
             DispatchQueue.main.async {
@@ -33,7 +33,7 @@ class VacancyListPresenter: BasePresenter<VacancyListVC> {
                     print("Error: \(error)")
                     self.view?.showErrorAlert(title: "Error", message: error as! String)
                 }
-                
+                self.view?.businessIndicator(Turn: .Off)
             }
             
         }
