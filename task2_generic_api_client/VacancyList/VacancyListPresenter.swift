@@ -29,6 +29,9 @@ class VacancyListPresenter: BasePresenter<VacancyListVC> {
                 case let .success(resultArray):
                     self.vacancyArray = resultArray
                     self.notifyView()
+                    if(self.vacancyArray?.isEmpty)! {
+                        self.view?.showErrorAlert(title: "Empry response", message: "No result on your request")
+                    }
                 case let .error(error):
                     print("Error: \(error)")
                     self.view?.showErrorAlert(title: "Error", message: error as! String)

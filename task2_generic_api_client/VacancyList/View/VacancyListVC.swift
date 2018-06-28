@@ -34,6 +34,9 @@ class VacancyListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     func showErrorAlert(title:String, message:String) {
         // TODO: showing alert with messages
         print("\(#function): TBD")
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
+        present(alert, animated: true)
     }
     
     ///
