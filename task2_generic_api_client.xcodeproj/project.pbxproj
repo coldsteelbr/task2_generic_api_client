@@ -19,6 +19,14 @@
 		3021242920E5032E00B06BAC /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3021242820E5032E00B06BAC /* BaseView.swift */; };
 		3021242B20E5052100B06BAC /* DetailVacancyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3021242A20E5052100B06BAC /* DetailVacancyPresenter.swift */; };
 		3021242D20E5058E00B06BAC /* DetailVacancyInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3021242C20E5058E00B06BAC /* DetailVacancyInteractor.swift */; };
+		3021243120E5268700B06BAC /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3021243020E5268700B06BAC /* FavoritesVC.swift */; };
+		3021243320E526B600B06BAC /* FavoritesViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3021243220E526B600B06BAC /* FavoritesViewProtocol.swift */; };
+		3021243520E5276800B06BAC /* FavoritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3021243420E5276800B06BAC /* FavoritesPresenter.swift */; };
+		3021243720E5277800B06BAC /* FavoritesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3021243620E5277800B06BAC /* FavoritesInteractor.swift */; };
+		3021243A20E527ED00B06BAC /* EmployerViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3021243920E527ED00B06BAC /* EmployerViewProtocol.swift */; };
+		3021243C20E5280F00B06BAC /* EmployerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3021243B20E5280F00B06BAC /* EmployerVC.swift */; };
+		3021243E20E5283800B06BAC /* EmployerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3021243D20E5283800B06BAC /* EmployerPresenter.swift */; };
+		3021244020E5286400B06BAC /* EmployerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3021243F20E5286400B06BAC /* EmployerInteractor.swift */; };
 		302385C120E4B43B006110A1 /* VacancyListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302385C020E4B43A006110A1 /* VacancyListInteractor.swift */; };
 		30256A8120E33DF60096774D /* InMemoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30256A8020E33DF50096774D /* InMemoryRequest.swift */; };
 		30256A8320E340BD0096774D /* VacancyListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30256A8220E340BD0096774D /* VacancyListVC.swift */; };
@@ -48,6 +56,14 @@
 		3021242820E5032E00B06BAC /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		3021242A20E5052100B06BAC /* DetailVacancyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVacancyPresenter.swift; sourceTree = "<group>"; };
 		3021242C20E5058E00B06BAC /* DetailVacancyInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVacancyInteractor.swift; sourceTree = "<group>"; };
+		3021243020E5268700B06BAC /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
+		3021243220E526B600B06BAC /* FavoritesViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewProtocol.swift; sourceTree = "<group>"; };
+		3021243420E5276800B06BAC /* FavoritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPresenter.swift; sourceTree = "<group>"; };
+		3021243620E5277800B06BAC /* FavoritesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesInteractor.swift; sourceTree = "<group>"; };
+		3021243920E527ED00B06BAC /* EmployerViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerViewProtocol.swift; sourceTree = "<group>"; };
+		3021243B20E5280F00B06BAC /* EmployerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerVC.swift; sourceTree = "<group>"; };
+		3021243D20E5283800B06BAC /* EmployerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerPresenter.swift; sourceTree = "<group>"; };
+		3021243F20E5286400B06BAC /* EmployerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerInteractor.swift; sourceTree = "<group>"; };
 		302385C020E4B43A006110A1 /* VacancyListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyListInteractor.swift; sourceTree = "<group>"; };
 		30256A8020E33DF50096774D /* InMemoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryRequest.swift; sourceTree = "<group>"; };
 		30256A8220E340BD0096774D /* VacancyListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyListVC.swift; sourceTree = "<group>"; };
@@ -98,6 +114,7 @@
 				304324B920E229CC00220E16 /* Domain */,
 				304324B820E2225600220E16 /* VacancyDetail */,
 				304324B720E2224700220E16 /* VacancyList */,
+				3021242E20E5263F00B06BAC /* Favorites */,
 				304324C120E23FC300220E16 /* EmployerDetail */,
 				304324B220E221A200220E16 /* Repository */,
 				30096DF420E0E0EB00E25BC3 /* Main.storyboard */,
@@ -121,6 +138,34 @@
 			isa = PBXGroup;
 			children = (
 				3021242520E5016000B06BAC /* DetailVacancyVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3021242E20E5263F00B06BAC /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				3021242F20E5266100B06BAC /* View */,
+				3021243420E5276800B06BAC /* FavoritesPresenter.swift */,
+				3021243620E5277800B06BAC /* FavoritesInteractor.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		3021242F20E5266100B06BAC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3021243020E5268700B06BAC /* FavoritesVC.swift */,
+				3021243220E526B600B06BAC /* FavoritesViewProtocol.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3021243820E527D200B06BAC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3021243920E527ED00B06BAC /* EmployerViewProtocol.swift */,
+				3021243B20E5280F00B06BAC /* EmployerVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -186,6 +231,9 @@
 		304324C120E23FC300220E16 /* EmployerDetail */ = {
 			isa = PBXGroup;
 			children = (
+				3021243820E527D200B06BAC /* View */,
+				3021243D20E5283800B06BAC /* EmployerPresenter.swift */,
+				3021243F20E5286400B06BAC /* EmployerInteractor.swift */,
 			);
 			path = EmployerDetail;
 			sourceTree = "<group>";
@@ -280,24 +328,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3021243120E5268700B06BAC /* FavoritesVC.swift in Sources */,
+				3021244020E5286400B06BAC /* EmployerInteractor.swift in Sources */,
 				302385C120E4B43B006110A1 /* VacancyListInteractor.swift in Sources */,
 				30FB003D20E3460E00E4D6A2 /* VacancyCell.swift in Sources */,
+				3021243E20E5283800B06BAC /* EmployerPresenter.swift in Sources */,
 				301EE6CA20E3D98B0041FCD2 /* BasePresenter.swift in Sources */,
 				30096DF120E0E0EB00E25BC3 /* AppDelegate.swift in Sources */,
 				301EE6C520E3D7A80041FCD2 /* VacancyListViewProtocol.swift in Sources */,
+				3021243320E526B600B06BAC /* FavoritesViewProtocol.swift in Sources */,
 				304324BB20E229D900220E16 /* Vacancy.swift in Sources */,
 				307CA3B920E4A4DC007A5753 /* BaseInteractor.swift in Sources */,
 				30256A8320E340BD0096774D /* VacancyListVC.swift in Sources */,
+				3021243720E5277800B06BAC /* FavoritesInteractor.swift in Sources */,
 				304324C520E2451000220E16 /* VacancyBank.swift in Sources */,
 				3021242620E5016000B06BAC /* DetailVacancyVC.swift in Sources */,
 				304324B620E2220A00220E16 /* Request.swift in Sources */,
 				304324BD20E229F000220E16 /* Employer.swift in Sources */,
+				3021243520E5276800B06BAC /* FavoritesPresenter.swift in Sources */,
 				304324B420E221CA00220E16 /* Repository.swift in Sources */,
+				3021243A20E527ED00B06BAC /* EmployerViewProtocol.swift in Sources */,
 				30256A8120E33DF60096774D /* InMemoryRequest.swift in Sources */,
 				3079B81820E28A4700A50D6A /* RequestResult.swift in Sources */,
 				3021242B20E5052100B06BAC /* DetailVacancyPresenter.swift in Sources */,
 				301EE6C820E3D9340041FCD2 /* BaseViewProtocol.swift in Sources */,
 				3021242920E5032E00B06BAC /* BaseView.swift in Sources */,
+				3021243C20E5280F00B06BAC /* EmployerVC.swift in Sources */,
 				3021242D20E5058E00B06BAC /* DetailVacancyInteractor.swift in Sources */,
 				301EE6C320E3B3290041FCD2 /* VacancyListPresenter.swift in Sources */,
 				304324C020E23A9900220E16 /* Utils.swift in Sources */,

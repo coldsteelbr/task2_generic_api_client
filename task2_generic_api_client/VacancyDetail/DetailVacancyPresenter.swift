@@ -11,4 +11,6 @@ import Foundation
 
 class DetailVacancyPresenter: BasePresenter<DetailVacancyVC> {
     
+    // TODO: trying to add to favorites
+    // TODO: trying to remove from favorites
 }

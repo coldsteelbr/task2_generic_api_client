@@ -1,5 +1,5 @@
 //
-//  DetailVacancyInteractor.swift
+//  FavoritesInteractor.swift
 //  task2_generic_api_client
 //
 //  Created by Roman Brazhnikov on 28.06.2018.
@@ -8,7 +8,6 @@
 
 import Foundation
 
-class DetailVacancyInteractor: BaseInteractor {
-    // TODO: Add to favorites
-    // TODO: Remove from favorites
+class FavoritesInteractor: BaseInteractor {
+    
 }
