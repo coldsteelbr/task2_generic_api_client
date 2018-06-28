@@ -14,7 +14,7 @@ class BasePresenter<V: BaseViewProtocol> {
     func attach(View view: V, Updating:Bool){
         self.view = view
         if Updating {
-            sendNotifications()
+            notifyViews()
         }
     }
     
@@ -22,7 +22,11 @@ class BasePresenter<V: BaseViewProtocol> {
         self.view = nil
     }
     
-    func sendNotifications() {
+    func notifyViews() {
         fatalError("\(#function) must be implemented")
+    }
+    
+    func update(){
+        
     }
 }

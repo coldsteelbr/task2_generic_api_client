@@ -14,8 +14,8 @@ class VacancyListPresenter: BasePresenter<VacancyListVC> {
     
     var vacancyArray: [Vacancy]?
     
-    override func sendNotifications() {
-        view?.update(vacancyArray: vacancyArray)
+    override func notifyViews() {
+        view?.update()
     }
     
     func searchWith(searchString: String){
@@ -33,7 +33,7 @@ class VacancyListPresenter: BasePresenter<VacancyListVC> {
                 switch(result) {
                 case let .success(resultArray):
                     self.vacancyArray = resultArray
-                    self.sendNotifications()
+                    self.notifyViews()
                 case let .error(error):
                     print("Error: \(error)")
                     self.view?.showErrorAlert(title: "Error", message: error as! String)

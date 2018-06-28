@@ -12,9 +12,6 @@ protocol VacancyListViewProtocol: BaseViewProtocol {
     var vacancyArray: [Vacancy] {get set}
     var searchText: String {get}
     
-    var hasConnection: Bool {get}
-    var isBusy: Bool {get}
-    
     //
     //  View Commands
     //
@@ -24,5 +21,5 @@ protocol VacancyListViewProtocol: BaseViewProtocol {
     //
     // Observer
     //
-    func update(vacancyArray:[Vacancy]?)
+    func update()
 }

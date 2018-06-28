@@ -10,15 +10,12 @@ import UIKit
 
 
 class VacancyListVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, VacancyListViewProtocol{
-    func update(vacancyArray: [Vacancy]?) {
-        if let unWrappedArray = vacancyArray {
+    
+    func update() {
+        if let unWrappedArray = presenter?.vacancyArray {
             self.vacancyArray = unWrappedArray
         }
     }
-    
-    var hasConnection: Bool = false
-    
-    var isBusy: Bool = false
     
     func showVacancyDetailFor(vacancy: Vacancy) {
         // TODO: segue to detail view

@@ -9,5 +9,6 @@
 import Foundation
 
 protocol BaseViewProtocol {
+    func update()
     func showErrorAlert(title:String, message:String)
 }
