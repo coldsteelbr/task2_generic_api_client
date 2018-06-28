@@ -15,6 +15,7 @@
 		301EE6C520E3D7A80041FCD2 /* VacancyListViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301EE6C420E3D7A80041FCD2 /* VacancyListViewProtocol.swift */; };
 		301EE6C820E3D9340041FCD2 /* BaseViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301EE6C720E3D9340041FCD2 /* BaseViewProtocol.swift */; };
 		301EE6CA20E3D98B0041FCD2 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301EE6C920E3D98B0041FCD2 /* BasePresenter.swift */; };
+		302385C120E4B43B006110A1 /* VacancyListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302385C020E4B43A006110A1 /* VacancyListInteractor.swift */; };
 		30256A8120E33DF60096774D /* InMemoryRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30256A8020E33DF50096774D /* InMemoryRequest.swift */; };
 		30256A8320E340BD0096774D /* VacancyListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30256A8220E340BD0096774D /* VacancyListVC.swift */; };
 		304324B420E221CA00220E16 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304324B320E221CA00220E16 /* Repository.swift */; };
@@ -39,6 +40,7 @@
 		301EE6C420E3D7A80041FCD2 /* VacancyListViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyListViewProtocol.swift; sourceTree = "<group>"; };
 		301EE6C720E3D9340041FCD2 /* BaseViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewProtocol.swift; sourceTree = "<group>"; };
 		301EE6C920E3D98B0041FCD2 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
+		302385C020E4B43A006110A1 /* VacancyListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyListInteractor.swift; sourceTree = "<group>"; };
 		30256A8020E33DF50096774D /* InMemoryRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryRequest.swift; sourceTree = "<group>"; };
 		30256A8220E340BD0096774D /* VacancyListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyListVC.swift; sourceTree = "<group>"; };
 		304324B320E221CA00220E16 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				30FB003C20E3460E00E4D6A2 /* VacancyCell.swift */,
 				301EE6C220E3B3290041FCD2 /* VacancyListPresenter.swift */,
 				301EE6C420E3D7A80041FCD2 /* VacancyListViewProtocol.swift */,
+				302385C020E4B43A006110A1 /* VacancyListInteractor.swift */,
 			);
 			path = VacancyList;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				302385C120E4B43B006110A1 /* VacancyListInteractor.swift in Sources */,
 				30FB003D20E3460E00E4D6A2 /* VacancyCell.swift in Sources */,
 				301EE6CA20E3D98B0041FCD2 /* BasePresenter.swift in Sources */,
 				30096DF120E0E0EB00E25BC3 /* AppDelegate.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol BaseViewProtocol {
+protocol BaseViewProtocol: Equatable {
     func update()
     func showErrorAlert(title:String, message:String)
 }

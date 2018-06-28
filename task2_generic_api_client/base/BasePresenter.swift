@@ -10,23 +10,31 @@ import Foundation
 
 class BasePresenter<V: BaseViewProtocol> {
     var view: V?
+    let interactor: BaseInteractor?
     
-    func attach(View view: V, Updating:Bool){
+    init(interactor: BaseInteractor) {
+        self.interactor = interactor
+    }
+    
+    func attachView(_ view: V, updating:Bool){
         self.view = view
-        if Updating {
-            notifyViews()
+        
+        if updating {
+            notifyView()
         }
     }
     
-    func detach(View view: V) {
-        self.view = nil
+    func detachView(_ view: V?) {
+        if self.view == view {
+            self.view = nil
+        }
     }
     
-    func notifyViews() {
+    func notifyView() {
         fatalError("\(#function) must be implemented")
     }
     
     func update(){
-        
+        fatalError("\(#function) must be implemented")
     }
 }

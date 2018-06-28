@@ -77,13 +77,13 @@ class VacancyListVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         
         // TODO: Update data?
         // attaching
-        presenter?.attach(View: self, Updating: true)
+        presenter?.attachView(self, updating: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        presenter?.detach(View: self)
+        presenter?.detachView(self)
     }
     
     deinit {

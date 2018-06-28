@@ -10,4 +10,8 @@ import Foundation
 
 class BaseInteractor {
     var repository: Repository?
+    
+    init(repository: Repository) {
+        self.repository = repository
+    }
 }

@@ -10,34 +10,30 @@ import Foundation
 
 class VacancyListPresenter: BasePresenter<VacancyListVC> {
     
-    var repository: Repository?
-    
     var vacancyArray: [Vacancy]?
     
-    override func notifyViews() {
+    init(interactor: VacancyListInteractor){
+        super.init(interactor: interactor)
+    }
+    
+    override func notifyView() {
         view?.update()
     }
     
     func searchWith(searchString: String){
-        //
-        //  Creating a request
-        //
-        let request = InMemoryRequest(filter: searchString, field: "title")
         
-        //
-        //  Sending request
-        //
-        repository!.getVacanciesForRequest(request) {
+        (interactor as! VacancyListInteractor).searchWith(searchString: searchString) {
             (result) in
             DispatchQueue.main.async {
                 switch(result) {
                 case let .success(resultArray):
                     self.vacancyArray = resultArray
-                    self.notifyViews()
+                    self.notifyView()
                 case let .error(error):
                     print("Error: \(error)")
                     self.view?.showErrorAlert(title: "Error", message: error as! String)
                 }
+                
             }
             
         }

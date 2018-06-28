@@ -25,9 +25,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let vacancyListVC = tabVC.viewControllers![0] as! VacancyListVC
         
         let repository = Repository()
-        
-        vacancyListVC.presenter = VacancyListPresenter()
-        vacancyListVC.presenter?.repository = repository
+        //
+        //  VacancyList
+        //
+        // Interactor:
+        let vacancyListInteractor = VacancyListInteractor(repository: repository)
+        // Presenter:
+        let vacancyListPresenter = VacancyListPresenter(interactor: vacancyListInteractor)
+        // View
+        vacancyListPresenter.attachView(vacancyListVC, updating: false)
+        vacancyListVC.presenter = vacancyListPresenter
+ 
         
         
         return true
