@@ -9,7 +9,7 @@
 import Foundation
 
 class FavoritesBank {
-    private var favorites = [Vacancy] ()
+    private var favorites = [String:Vacancy] ()
     
     //
     // Singleton
@@ -29,4 +29,19 @@ class FavoritesBank {
     // Logic
     //
     
+    func addVacancy(_ vacancy: Vacancy) {
+        favorites[vacancy.url] = vacancy
+    }
+    
+    func removeVacancy(_ vacancy: Vacancy) {
+        favorites.removeValue(forKey: vacancy.url)
+    }
+    
+    func contains(_ vacancy: Vacancy) -> Bool {
+        return favorites[vacancy.url] != nil
+    }
+    
+    func getAllVacancies() -> [Vacancy] {
+        return Array(favorites.values)
+    }
 }

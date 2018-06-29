@@ -42,9 +42,25 @@ class Repository {
         }
     }
     
-    func getAllFavorites(with completion: ([Vacancy])->()) {
+    //
+    // for favorites // TODO: use CoreData
+    //
+    
+    /// Get all favorite vacancies as an array
+    func getAllFavorites(with completion: @escaping ([Vacancy])->()) {
         // trying to get everything from favorites
         // in a separate thread
         // then calling completion()
+        DispatchQueue.global(qos: .userInteractive).async {
+            completion(FavoritesBank.getInstance().getAllVacancies())
+        }
+    }
+    
+    /// Checks out if the vacancy is in favorites
+    func isFavorite(vacancy: Vacancy, with completion: @escaping (Bool)->()) {
+        // TODO: use CoreData
+        DispatchQueue.global(qos: .userInteractive).async {
+            completion(FavoritesBank.getInstance().contains(vacancy))
+        }
     }
 }

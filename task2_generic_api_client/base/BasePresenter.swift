@@ -31,7 +31,7 @@ class BasePresenter<V: BaseViewProtocol> {
     }
     
     func notifyView() {
-        fatalError("\(#function) must be implemented")
+        view?.update()
     }
     
     func update(){

@@ -46,16 +46,26 @@ class DetailVacancyVC: BaseSceenView {
     //  BaseScrenView
     //
     override func update() {
-        fatalError("\(#function) must be implemented")
+        //fatalError("\(#function) must be implemented")
+        //
+        //  TODO: SET ACTION
+        //
+        if let _ = presenter?.isFavorite {
+            navigationItem.rightBarButtonItem?.title = "Remove"
+        } else {
+            navigationItem.rightBarButtonItem?.title = "Add"
+        }
     }
     
     //
     //  Lifecycle
     //
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        presenter?.attachView(self, updating: false)
+        presenter?.favoriteStateForVacancy(vacancy!)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,15 +74,21 @@ class DetailVacancyVC: BaseSceenView {
         populateUI()
     }
     
+    /// Sets UI widgets with Vacancy item values
     func populateUI() {
+        // - title
         vacancyTitle.text = vacancy?.title
+        // - salary
         if let salary = vacancy?.salary {
             vacancySalaryLabel.text = numberFormatter.string(from: salary as NSNumber)
         }
+        // - employer
         vacancyEmployer.text = vacancy?.employer.name
+        // - date
         if let date = vacancy?.date {
             vacancyDate.text = dateFormatter.string(from: date)
         }
+        // - description
         vacancyDescription.text = vacancy?.description
     }
 }

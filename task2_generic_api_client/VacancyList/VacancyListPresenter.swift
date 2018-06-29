@@ -16,9 +16,6 @@ class VacancyListPresenter: BasePresenter<VacancyListVC> {
         super.init(interactor: interactor)
     }
     
-    override func notifyView() {
-        view?.update()
-    }
     
     func searchWith(searchString: String){
         view?.businessIndicator(Turn: .On)

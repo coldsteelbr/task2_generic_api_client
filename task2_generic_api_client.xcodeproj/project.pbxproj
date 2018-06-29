@@ -32,6 +32,7 @@
 		30256A8320E340BD0096774D /* VacancyListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30256A8220E340BD0096774D /* VacancyListVC.swift */; };
 		3031F49F20E5E25E00101B58 /* FrameworkFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3031F49E20E5E25E00101B58 /* FrameworkFactory.swift */; };
 		3031F4A120E5E85100101B58 /* FavoritesBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3031F4A020E5E85100101B58 /* FavoritesBank.swift */; };
+		3031F4A320E622CF00101B58 /* DetailVacancyViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3031F4A220E622CF00101B58 /* DetailVacancyViewProtocol.swift */; };
 		304324B420E221CA00220E16 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304324B320E221CA00220E16 /* Repository.swift */; };
 		304324B620E2220A00220E16 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304324B520E2220A00220E16 /* Request.swift */; };
 		304324BB20E229D900220E16 /* Vacancy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304324BA20E229D900220E16 /* Vacancy.swift */; };
@@ -71,6 +72,7 @@
 		30256A8220E340BD0096774D /* VacancyListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyListVC.swift; sourceTree = "<group>"; };
 		3031F49E20E5E25E00101B58 /* FrameworkFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkFactory.swift; sourceTree = "<group>"; };
 		3031F4A020E5E85100101B58 /* FavoritesBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesBank.swift; sourceTree = "<group>"; };
+		3031F4A220E622CF00101B58 /* DetailVacancyViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVacancyViewProtocol.swift; sourceTree = "<group>"; };
 		304324B320E221CA00220E16 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		304324B520E2220A00220E16 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		304324BA20E229D900220E16 /* Vacancy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vacancy.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				3021242520E5016000B06BAC /* DetailVacancyVC.swift */,
+				3031F4A220E622CF00101B58 /* DetailVacancyViewProtocol.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				3021242D20E5058E00B06BAC /* DetailVacancyInteractor.swift in Sources */,
 				301EE6C320E3B3290041FCD2 /* VacancyListPresenter.swift in Sources */,
 				304324C020E23A9900220E16 /* Utils.swift in Sources */,
+				3031F4A320E622CF00101B58 /* DetailVacancyViewProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

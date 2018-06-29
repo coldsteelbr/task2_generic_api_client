@@ -11,4 +11,11 @@ import Foundation
 class DetailVacancyInteractor: BaseInteractor {
     // TODO: Add to favorites
     // TODO: Remove from favorites
+    
+    func checkForFavorite(vacancy: Vacancy, with completion: @escaping (Bool) -> Void) {
+        repository?.isFavorite(vacancy: vacancy) {
+            (isFavorite) in
+            completion(isFavorite)
+        }
+    }
 }

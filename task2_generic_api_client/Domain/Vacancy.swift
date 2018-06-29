@@ -22,6 +22,7 @@ class Vacancy {
     let salary: Decimal?
     let employer: Employer
     let experience: String?
+    let url: String
     
     /// Vacancy's logo is employer's logo
     var logoUrl: String? {
@@ -31,13 +32,14 @@ class Vacancy {
     }
     
     /// Inits all the fields
-    init(title: String, description: String, date: Date, salary: Decimal, employer: Employer, experience: String) {
+    init(title: String, description: String, date: Date, salary: Decimal, employer: Employer, experience: String, url: String) {
         self.title = title
         self.description = description
         self.date = date
         self.salary = salary
         self.employer = employer
         self.experience = experience
+        self.url = url
     }
     
     /// Creates a random Vacancy
@@ -58,11 +60,13 @@ class Vacancy {
             
             let randomSalary = Utils.randFromZeroTo(100000)
             
-            self.init(title: randomTitle, description: randomDescription, date: randomDate, salary: Decimal(randomSalary), employer: Employer.genericEmployer(), experience: "No experience")
+            let randomUrl = "http://in-memory/\(Utils.randFromZeroTo(100000))"
+            
+            self.init(title: randomTitle, description: randomDescription, date: randomDate, salary: Decimal(randomSalary), employer: Employer.genericEmployer(), experience: "No experience", url: randomUrl)
         }
         else {
             // creating an empty vacancy
-            self.init(title: "<No title>", description: "<Empty description>", date: Date(), salary: Decimal(0), employer: Employer.genericEmployer(), experience: "")
+            self.init(title: "<No title>", description: "<Empty description>", date: Date(), salary: Decimal(0), employer: Employer.genericEmployer(), experience: "", url: "")
         }
     }
 }
