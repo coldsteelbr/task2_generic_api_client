@@ -168,7 +168,11 @@
                         <viewLayoutGuide key="safeArea" id="t7K-Al-AbW"/>
                     </view>
                     <navigationItem key="navigationItem" title="Vacancy" id="jcy-Fa-OQz">
-                        <barButtonItem key="rightBarButtonItem" title="Null" id="fJw-2d-RQJ"/>
+                        <barButtonItem key="rightBarButtonItem" title="Null" id="fJw-2d-RQJ">
+                            <connections>
+                                <action selector="toggleFavorite:" destination="0Bz-3V-F8K" id="kQq-aT-Vyq"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="emplyersLogo" destination="Zko-GV-e3B" id="4nx-OC-F2u"/>

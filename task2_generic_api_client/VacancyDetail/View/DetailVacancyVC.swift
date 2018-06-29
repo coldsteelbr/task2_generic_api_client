@@ -50,12 +50,19 @@ class DetailVacancyVC: BaseSceenView {
         //
         //  TODO: SET ACTION
         //
-        if let _ = presenter?.isFavorite {
-            navigationItem.rightBarButtonItem?.title = "Remove"
-        } else {
-            navigationItem.rightBarButtonItem?.title = "Add"
+        if let isf = presenter?.isFavorite {
+            
+            if isf {
+                print("\(#function) is favorite: \(isf)")
+                navigationItem.rightBarButtonItem?.title = "Remove"
+            } else {
+                print("\(#function) is favorite: \(isf)")
+                navigationItem.rightBarButtonItem?.title = "Add"
+            }
+            
         }
     }
+    
     
     //
     //  Lifecycle
@@ -90,5 +97,9 @@ class DetailVacancyVC: BaseSceenView {
         }
         // - description
         vacancyDescription.text = vacancy?.description
+    }
+    
+    @IBAction func toggleFavorite(_ sender: UIBarButtonItem) {
+        presenter?.toggleFavoriteStateForVacancy(vacancy!)
     }
 }

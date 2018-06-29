@@ -29,9 +29,24 @@ class DetailVacancyPresenter: BasePresenter<DetailVacancyVC> {
     //
     
     func favoriteStateForVacancy(_ vacancy: Vacancy) {
+        print("\(#function) is favorite: \(isFavorite)")
         (interactor as! DetailVacancyInteractor).checkForFavorite(vacancy: vacancy) {
             (isVacancyFavorite) in
+            self.isFavorite = isVacancyFavorite
             DispatchQueue.main.async {
+                print("\(#function) is favorite: \(self.isFavorite)")
+                self.view?.update()
+            }
+        }
+    }
+    
+    func toggleFavoriteStateForVacancy(_ vacancy: Vacancy) {
+        print("\(#function) is favorite: \(isFavorite)")
+        (interactor as! DetailVacancyInteractor).toggleFavoriteStateForVacancy(vacancy) {
+            (isVacancyFavorite) in
+            self.isFavorite = isVacancyFavorite
+            DispatchQueue.main.async {
+                print("\(#function) is favorite: \(self.isFavorite)")
                 self.view?.update()
             }
         }

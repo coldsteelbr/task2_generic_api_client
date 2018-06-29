@@ -63,4 +63,19 @@ class Repository {
             completion(FavoritesBank.getInstance().contains(vacancy))
         }
     }
+    
+    //
+    func toggleFavoriteStateForVacancy(_ vacancy: Vacancy, with completion: @escaping (Bool)->()) {
+        DispatchQueue.global(qos: .userInteractive).async {
+            let bank = FavoritesBank.getInstance()
+            // toggling
+            if bank.contains(vacancy) {
+               bank.removeVacancy(vacancy)
+            } else {
+                bank.addVacancy(vacancy)
+            }
+            // sending result contains now or not
+            completion(FavoritesBank.getInstance().contains(vacancy))
+        }
+    }
 }

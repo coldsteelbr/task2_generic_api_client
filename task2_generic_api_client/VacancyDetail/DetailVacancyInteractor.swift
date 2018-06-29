@@ -15,6 +15,15 @@ class DetailVacancyInteractor: BaseInteractor {
     func checkForFavorite(vacancy: Vacancy, with completion: @escaping (Bool) -> Void) {
         repository?.isFavorite(vacancy: vacancy) {
             (isFavorite) in
+            print("\(#function) is favorite: \(isFavorite)")
+            completion(isFavorite)
+        }
+    }
+    
+    func toggleFavoriteStateForVacancy(_ vacancy: Vacancy, with completion: @escaping  (Bool) -> Void) {
+        repository?.toggleFavoriteStateForVacancy(vacancy) {
+            (isFavorite) in
+            print("\(#function) is favorite: \(isFavorite)")
             completion(isFavorite)
         }
     }
