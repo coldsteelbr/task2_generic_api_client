@@ -9,8 +9,26 @@
 import Foundation
 
 class Repository {
+    //
+    //
+    //
+    private static var instance: Repository?
     
+    public static func getInstance() -> Repository{
+        if instance == nil {
+            instance = Repository()
+        }
+        
+        return instance!
+    }
     
+    private init() {
+        
+    }
+    
+    //
+    //  Commands
+    //
     
     func getVacanciesForRequest(_ request: Request, with completion: @escaping (RequestResult)->()) {
         // Executing request in separate thread

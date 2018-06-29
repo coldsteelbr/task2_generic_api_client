@@ -13,7 +13,7 @@ class DetailVacancyVC: BaseSceenView {
     //  Field & Properties
     //
     var vacancy: Vacancy?
-    var presenter: DetailVacancyPresenter?
+    var presenter: DetailVacancyPresenter? = FrameworkFactory.presenterForVacancyDetail()
     
     let numberFormatter: NumberFormatter = {
         let nf = NumberFormatter()

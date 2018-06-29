@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabVC = navVC.topViewController as! UITabBarController
         let vacancyListVC = tabVC.viewControllers![0] as! VacancyListVC
         
-        let repository = Repository()
+        let repository = Repository.getInstance()
         //
         //  VacancyList
         //
