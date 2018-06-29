@@ -115,7 +115,7 @@
 				304324B820E2225600220E16 /* VacancyDetail */,
 				304324B720E2224700220E16 /* VacancyList */,
 				3021242E20E5263F00B06BAC /* Favorites */,
-				304324C120E23FC300220E16 /* EmployerDetail */,
+				304324C120E23FC300220E16 /* Employer */,
 				304324B220E221A200220E16 /* Repository */,
 				30096DF420E0E0EB00E25BC3 /* Main.storyboard */,
 				30096DFC20E0E0EF00E25BC3 /* Info.plist */,
@@ -228,14 +228,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		304324C120E23FC300220E16 /* EmployerDetail */ = {
+		304324C120E23FC300220E16 /* Employer */ = {
 			isa = PBXGroup;
 			children = (
 				3021243820E527D200B06BAC /* View */,
 				3021243D20E5283800B06BAC /* EmployerPresenter.swift */,
 				3021243F20E5286400B06BAC /* EmployerInteractor.swift */,
 			);
-			path = EmployerDetail;
+			path = Employer;
 			sourceTree = "<group>";
 		};
 		304324C220E23FF300220E16 /* misc */ = {
