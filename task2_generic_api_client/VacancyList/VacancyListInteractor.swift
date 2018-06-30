@@ -14,7 +14,9 @@ class VacancyListInteractor: BaseInteractor{
         //
         //  Creating a request
         //
+        // in-memory request:
         //let request = InMemoryRequest(filter: searchString, field: "title")
+        // Http API
         let dataParser: DataParserProtocol = HhDataParser()
         let client = HttpClient(dataParser: dataParser)
         let params = [ "text" :  searchString,  // text for searching for
