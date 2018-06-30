@@ -8,10 +8,66 @@
 
 import Foundation
 
+enum RequestMethod: String {
+    case vacancies = "/vacancies?"
+}
+
 class HhRequest: Request {
-    func execute(with completion: @escaping (RequestResult) -> Void) {
-        <#code#>
+    let client: HttpClient
+    
+    let baseUrl = "https://api.hh.ru"
+    let userAgent = ("User-Agent", "GenericApiClient/1.0 (mail@example.com)")
+    let requestMethod:RequestMethod
+    let requestParameters: [String:String]?
+    
+    //
+    //  Logic
+    //
+    
+    init(HttpClient client: HttpClient, RequestMethod method:RequestMethod, Params params: [String:String]) {
+        requestMethod = method
+        requestParameters = params
+        self.client = client
     }
     
+    func execute(with completion: @escaping (RequestResult) -> Void) {
+        DispatchQueue.global(qos: .userInteractive).async {
+            self.client.performHttpForRequest(self.getRequestString()!) {
+                (requestResult) in
+                
+                completion(requestResult)
+                /*
+                switch requestResult {
+                case let .success(vacancies):
+                    completion(requestResult)
+                    print("Found: \(vacancies.count) vacancies")
+                case let .error(error):
+                    completion(requestResult)
+                    print("Error: \(error)")
+                }
+                */
+            }
+        }
+    }
+    
+    //
+    //  RequestProtocol methods
+    //
+    func getRequestString() -> String? {
+        // building url address for HH API
+        var components = URLComponents(string: baseUrl + requestMethod.rawValue)
+        var queryItems = [URLQueryItem]()
+        
+        if let requestParams = requestParameters {
+            for (name, value) in requestParams {
+                let item = URLQueryItem(name: name, value: value)
+                queryItems.append(item)
+            }
+        }
+        
+        components?.queryItems = queryItems
+        
+        return components?.url?.absoluteString
+    }
     
 }

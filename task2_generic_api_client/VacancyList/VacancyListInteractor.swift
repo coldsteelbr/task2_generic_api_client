@@ -14,7 +14,13 @@ class VacancyListInteractor: BaseInteractor{
         //
         //  Creating a request
         //
-        let request = InMemoryRequest(filter: searchString, field: "title")
+        //let request = InMemoryRequest(filter: searchString, field: "title")
+        let dataParser: DataParserProtocol = HhDataParser()
+        let client = HttpClient(dataParser: dataParser)
+        let params = [ "text" :  searchString,  // text for searching for
+                       "area":  "4",            // 4 is for Novosibirsk
+                       "search_field":  "name"] // search in vacancy's title
+        let request = HhRequest(HttpClient: client, RequestMethod: .vacancies, Params: params)
         
         //
         //  Sending request
