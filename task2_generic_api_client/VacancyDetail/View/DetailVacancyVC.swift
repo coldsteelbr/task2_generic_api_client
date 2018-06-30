@@ -89,8 +89,11 @@ class DetailVacancyVC: BaseSceenView {
         // - title
         vacancyTitle.text = vacancy?.title
         // - salary
-        if let salary = vacancy?.salary {
-            vacancySalaryLabel.text = numberFormatter.string(from: salary as NSNumber)
+        if let salary_from = vacancy?.salary_from {
+            vacancySalaryLabel.text = numberFormatter.string(from: salary_from as NSNumber)
+        }
+        if let salary_to = vacancy?.salary_to {
+            vacancySalaryLabel.text = "\(vacancySalaryLabel.text ?? "") - " + numberFormatter.string(from: salary_to as NSNumber)!
         }
         // - employer
         vacancyEmployer.setTitle(vacancy?.employer.name, for: .normal)

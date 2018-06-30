@@ -19,7 +19,8 @@ class Vacancy {
     let title: String
     let description: String?
     let date: Date
-    let salary: Decimal?
+    let salary_from: Decimal?
+    let salary_to: Decimal?
     let employer: Employer
     let experience: String?
     let url: String
@@ -32,11 +33,12 @@ class Vacancy {
     }
     
     /// Inits all the fields
-    init(title: String, description: String, date: Date, salary: Decimal, employer: Employer, experience: String, url: String) {
+    init(title: String, description: String, date: Date, salary_from: Decimal?, salary_to: Decimal?, employer: Employer, experience: String, url: String) {
         self.title = title
         self.description = description
         self.date = date
-        self.salary = salary
+        self.salary_from = salary_from
+        self.salary_to = salary_to
         self.employer = employer
         self.experience = experience
         self.url = url
@@ -62,11 +64,11 @@ class Vacancy {
             
             let randomUrl = "http://in-memory/\(Utils.randFromZeroTo(100000))"
             
-            self.init(title: randomTitle, description: randomDescription, date: randomDate, salary: Decimal(randomSalary), employer: Employer.genericEmployer(), experience: "No experience", url: randomUrl)
+            self.init(title: randomTitle, description: randomDescription, date: randomDate, salary_from: Decimal(randomSalary), salary_to: Decimal(randomSalary), employer: Employer.genericEmployer(), experience: "No experience", url: randomUrl)
         }
         else {
             // creating an empty vacancy
-            self.init(title: "<No title>", description: "<Empty description>", date: Date(), salary: Decimal(0), employer: Employer.genericEmployer(), experience: "", url: "")
+            self.init(title: "<No title>", description: "<Empty description>", date: Date(), salary_from: Decimal(0), salary_to: Decimal(1000), employer: Employer.genericEmployer(), experience: "", url: "")
         }
     }
 }
