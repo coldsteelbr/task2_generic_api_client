@@ -179,7 +179,7 @@
                         <viewLayoutGuide key="safeArea" id="t7K-Al-AbW"/>
                     </view>
                     <navigationItem key="navigationItem" title="Vacancy" id="jcy-Fa-OQz">
-                        <barButtonItem key="rightBarButtonItem" title="Null" id="fJw-2d-RQJ">
+                        <barButtonItem key="rightBarButtonItem" title="Fav" id="fJw-2d-RQJ">
                             <connections>
                                 <action selector="toggleFavorite:" destination="0Bz-3V-F8K" id="kQq-aT-Vyq"/>
                             </connections>
@@ -198,7 +198,7 @@
             </objects>
             <point key="canvasLocation" x="2021.5999999999999" y="109.29535232383809"/>
         </scene>
-        <!--EmployerVC-->
+        <!--Employer-->
         <scene sceneID="2ue-QV-n3q">
             <objects>
                 <viewController id="L2e-aa-O6N" customClass="EmployerVC" customModule="task2_generic_api_client" customModuleProvider="target" sceneMemberID="viewController">
@@ -239,6 +239,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lxA-SY-J25"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Employer" id="ZLw-GR-VM1"/>
                     <connections>
                         <outlet property="employerDescription" destination="yQk-ug-Ogh" id="xcG-fm-YJk"/>
                         <outlet property="employerLogo" destination="pGd-OF-FXu" id="7d7-QB-n0s"/>
