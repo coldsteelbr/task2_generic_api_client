@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--FavoritesVC-->
         <scene sceneID="zGD-vz-dcd">
             <objects>
-                <viewController id="6tj-53-U0y" sceneMemberID="viewController">
+                <viewController id="6tj-53-U0y" customClass="FavoritesVC" customModule="task2_generic_api_client" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MGs-6s-o9B">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,7 +26,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StandardCell" rowHeight="73" id="i0F-hM-QDa">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoriteCell" rowHeight="73" id="i0F-hM-QDa" customClass="FavoriteCell" customModule="task2_generic_api_client" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="375" height="73"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="i0F-hM-QDa" id="jaF-4n-7BM">
@@ -70,10 +70,17 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
+                                                    <outlet property="descriptionLabel" destination="5j1-Iu-fxZ" id="wuD-Pa-nEE"/>
+                                                    <outlet property="employerLogo" destination="gbn-ZB-Hfx" id="Lqg-Wq-CaM"/>
+                                                    <outlet property="titleLabel" destination="LZT-TT-vvI" id="MyL-Qw-HgO"/>
                                                     <segue destination="0Bz-3V-F8K" kind="show" identifier="showVacancyDetailFromFavorites" id="D5L-yB-qfX"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="6tj-53-U0y" id="uEC-Z4-cim"/>
+                                            <outlet property="delegate" destination="6tj-53-U0y" id="FCv-io-T6u"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                             </stackView>
@@ -88,6 +95,9 @@
                         <viewLayoutGuide key="safeArea" id="Ldk-BK-scu"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="tUa-YN-yIM"/>
+                    <connections>
+                        <outlet property="tableView" destination="M7w-Xj-uob" id="ApN-RD-KcI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kwX-yK-HU5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -375,6 +385,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ujO-mT-HBy"/>
+        <segue reference="D5L-yB-qfX"/>
     </inferredMetricsTieBreakers>
 </document>

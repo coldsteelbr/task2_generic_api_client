@@ -9,5 +9,11 @@
 import Foundation
 
 class FavoritesInteractor: BaseInteractor {
-    
+    func getAllFavorites(with completion: @escaping ([Vacancy]) -> Void ) {
+        repository?.getAllFavorites() {
+            (favorites) in
+            
+            completion(favorites)
+        }
+    }
 }

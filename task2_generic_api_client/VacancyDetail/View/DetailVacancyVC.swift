@@ -71,6 +71,9 @@ class DetailVacancyVC: BaseSceenView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if presenter == nil {
+            presenter = FrameworkFactory.presenterForVacancyDetail()
+        }
         presenter?.attachView(self, updating: false)
         presenter?.favoriteStateForVacancy(vacancy!)
     }

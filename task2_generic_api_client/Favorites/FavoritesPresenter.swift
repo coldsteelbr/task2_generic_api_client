@@ -9,5 +9,15 @@
 import Foundation
 
 class FavoritesPresenter: BasePresenter<FavoritesVC> {
+    var favorites: [Vacancy]?
     
+    func getAllFavorites() {
+        (interactor as! FavoritesInteractor).getAllFavorites() {
+            (result) in
+            self.favorites = result
+            DispatchQueue.main.async {
+                self.view?.update()
+            }
+        }
+    }
 }

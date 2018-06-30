@@ -9,26 +9,33 @@
 import Foundation
 
 class FrameworkFactory {
+    private static var detailVacancyPresenter: DetailVacancyPresenter?
+    private static var employerPresenter: EmployerPresenter?
+    private static var favoritesPresenter: FavoritesPresenter?
     
     static func presenterForVacancyDetail() -> DetailVacancyPresenter {
-        let interactor = DetailVacancyInteractor(repository: Repository.getInstance())
-        let presenter = DetailVacancyPresenter(interactor: interactor)
         
-        return presenter
+        if detailVacancyPresenter == nil{
+            let interactor = DetailVacancyInteractor(repository: Repository.getInstance())
+            detailVacancyPresenter = DetailVacancyPresenter(interactor: interactor)
+        }
+        return detailVacancyPresenter!
     }
     
     
     static func presenterForEmployer() -> EmployerPresenter {
-        let interactor = EmployerInteractor(repository: Repository.getInstance())
-        let presenter = EmployerPresenter(interactor: interactor)
-        
-        return presenter
+        if employerPresenter == nil {
+            let interactor = EmployerInteractor(repository: Repository.getInstance())
+            employerPresenter = EmployerPresenter(interactor: interactor)
+        }
+        return employerPresenter!
     }
     
     static func presenterForFavorites() -> FavoritesPresenter {
-        let interactor = FavoritesInteractor(repository: Repository.getInstance())
-        let presenter = FavoritesPresenter(interactor: interactor)
-        
-        return presenter
+        if favoritesPresenter == nil {
+            let interactor = FavoritesInteractor(repository: Repository.getInstance())
+            favoritesPresenter = FavoritesPresenter(interactor: interactor)
+        }
+        return favoritesPresenter!
     }
 }
