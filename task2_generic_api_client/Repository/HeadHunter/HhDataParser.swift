@@ -63,7 +63,7 @@ class HhDataParser: DataParserProtocol {
                     responsibility = res
                 }
                 
-                let description = "Requirement:\n\(requirement)\n\nResponsibility:\n\(responsibility)"
+                let description = "\(requirement)\n\nResponsibility:\n\(responsibility)"
                 
                 //
                 // salary
@@ -86,13 +86,35 @@ class HhDataParser: DataParserProtocol {
                     }
                 }
                 
+                
+                //
+                // EMPLOYER
+                //
+                var actualEmployer = Employer.genericEmployer()
+                if let employer = item["employer"] as? [String:Any] {
+                    let employerName = employer["name"] as? String
+                    let employerUrl = employer["url"] as? String
+                    let employerLogos = employer["logo_urls"] as? [String: Any]
+                    
+                    guard let e_name = employerName,
+                          let e_url = employerUrl
+                        else {
+                        return .error(NSError(domain: "Fail", code: 1, userInfo: nil))
+                    }
+                    
+                    actualEmployer = Employer(Name: e_name, Description: e_url, LogoUrl: nil)
+                    
+                }
+                
+                //
                 //  Building vacancy
+                //
                 let vacancy = Vacancy(title: title!,
                                       description: description,
                                       date: date!,
                                       salary_from: salary_from,
                                       salary_to: salary_to,
-                                      employer: Employer.genericEmployer(),
+                                      employer: actualEmployer,
                                       experience: "",
                                       url: url!)
                 vacancyList.append(vacancy)
