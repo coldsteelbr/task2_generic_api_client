@@ -132,12 +132,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TaF-FB-7En">
-                                <rect key="frame" x="129" y="159" width="238" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Scr-DQ-unu">
                                 <rect key="frame" x="16" y="188" width="36" height="21"/>
                                 <constraints>
@@ -153,24 +147,31 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1jr-ha-QxC">
+                                <rect key="frame" x="129" y="150" width="238" height="30"/>
+                                <state key="normal" title="Employer's Name"/>
+                                <connections>
+                                    <segue destination="L2e-aa-O6N" kind="show" identifier="showEmployerDetail" id="R9t-9E-lkh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="xQW-ze-8Qi" firstAttribute="leading" secondItem="Zko-GV-e3B" secondAttribute="leading" id="6q8-sP-RvE"/>
                             <constraint firstItem="XCm-zv-jgG" firstAttribute="leading" secondItem="vzW-ot-GMR" secondAttribute="leading" id="8nw-O0-C0N"/>
-                            <constraint firstItem="t7K-Al-AbW" firstAttribute="trailing" secondItem="TaF-FB-7En" secondAttribute="trailing" constant="8" id="96Q-et-vZN"/>
                             <constraint firstItem="vzW-ot-GMR" firstAttribute="top" secondItem="Zko-GV-e3B" secondAttribute="top" id="B4K-Xb-zAU"/>
                             <constraint firstItem="Zko-GV-e3B" firstAttribute="top" secondItem="t7K-Al-AbW" secondAttribute="top" constant="16" id="GpC-oy-ElK"/>
                             <constraint firstItem="Scr-DQ-unu" firstAttribute="leading" secondItem="Zko-GV-e3B" secondAttribute="leading" id="Hsy-X5-9aO"/>
                             <constraint firstItem="Zko-GV-e3B" firstAttribute="leading" secondItem="t7K-Al-AbW" secondAttribute="leading" constant="16" id="IHh-Uo-w6A"/>
                             <constraint firstItem="t7K-Al-AbW" firstAttribute="trailing" secondItem="vzW-ot-GMR" secondAttribute="trailing" constant="8" id="JsL-hA-h3u"/>
                             <constraint firstItem="XCm-zv-jgG" firstAttribute="top" secondItem="vzW-ot-GMR" secondAttribute="bottom" constant="19" id="JvZ-8C-q1h"/>
+                            <constraint firstItem="1jr-ha-QxC" firstAttribute="leading" secondItem="XCm-zv-jgG" secondAttribute="leading" id="LBH-UV-5te"/>
                             <constraint firstItem="xQW-ze-8Qi" firstAttribute="top" secondItem="Scr-DQ-unu" secondAttribute="bottom" constant="8" id="MNG-5n-RSa"/>
                             <constraint firstItem="t7K-Al-AbW" firstAttribute="trailing" secondItem="XCm-zv-jgG" secondAttribute="trailing" constant="8" id="OgH-i3-yFS"/>
                             <constraint firstItem="xQW-ze-8Qi" firstAttribute="trailing" secondItem="ozP-55-X3b" secondAttribute="trailingMargin" id="TB5-Yl-b2e"/>
-                            <constraint firstItem="TaF-FB-7En" firstAttribute="leading" secondItem="XCm-zv-jgG" secondAttribute="leading" id="dzl-8O-wwO"/>
+                            <constraint firstItem="t7K-Al-AbW" firstAttribute="trailing" secondItem="1jr-ha-QxC" secondAttribute="trailing" constant="8" id="hRm-r9-o6U"/>
+                            <constraint firstItem="1jr-ha-QxC" firstAttribute="bottom" secondItem="Zko-GV-e3B" secondAttribute="bottom" id="j9Y-Id-9wc"/>
                             <constraint firstItem="vzW-ot-GMR" firstAttribute="leading" secondItem="Zko-GV-e3B" secondAttribute="trailing" constant="8" id="mdJ-ur-dBv"/>
-                            <constraint firstItem="TaF-FB-7En" firstAttribute="top" secondItem="XCm-zv-jgG" secondAttribute="bottom" constant="18" id="oL1-2L-JYi"/>
                             <constraint firstItem="t7K-Al-AbW" firstAttribute="bottom" secondItem="xQW-ze-8Qi" secondAttribute="bottom" constant="8" id="qTB-UG-01z"/>
                             <constraint firstItem="Scr-DQ-unu" firstAttribute="top" secondItem="Zko-GV-e3B" secondAttribute="bottom" constant="8" id="uuo-Nd-mTM"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Scr-DQ-unu" secondAttribute="trailing" constant="20" symbolic="YES" id="wPt-3j-p2W"/>
@@ -188,20 +189,19 @@
                         <outlet property="emplyersLogo" destination="Zko-GV-e3B" id="4nx-OC-F2u"/>
                         <outlet property="vacancyDate" destination="Scr-DQ-unu" id="eZz-9X-bq0"/>
                         <outlet property="vacancyDescription" destination="xQW-ze-8Qi" id="IPu-UT-ZK4"/>
-                        <outlet property="vacancyEmployer" destination="TaF-FB-7En" id="LQw-y8-gTI"/>
+                        <outlet property="vacancyEmployer" destination="1jr-ha-QxC" id="ACQ-06-dar"/>
                         <outlet property="vacancySalaryLabel" destination="XCm-zv-jgG" id="4N5-jl-zkf"/>
                         <outlet property="vacancyTitle" destination="vzW-ot-GMR" id="uVp-1P-tRS"/>
-                        <segue destination="L2e-aa-O6N" kind="show" identifier="EmployerDetail" id="qKa-tK-E39"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b7u-1S-EFb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2021.5999999999999" y="109.29535232383809"/>
         </scene>
-        <!--View Controller-->
+        <!--EmployerVC-->
         <scene sceneID="2ue-QV-n3q">
             <objects>
-                <viewController id="L2e-aa-O6N" sceneMemberID="viewController">
+                <viewController id="L2e-aa-O6N" customClass="EmployerVC" customModule="task2_generic_api_client" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TMF-YG-PFo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -239,6 +239,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lxA-SY-J25"/>
                     </view>
+                    <connections>
+                        <outlet property="employerDescription" destination="yQk-ug-Ogh" id="xcG-fm-YJk"/>
+                        <outlet property="employerLogo" destination="pGd-OF-FXu" id="7d7-QB-n0s"/>
+                        <outlet property="employerName" destination="x6J-NK-kkV" id="6Mx-hM-Huq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="epb-1v-W59" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -36,7 +36,7 @@ class DetailVacancyVC: BaseSceenView {
     @IBOutlet var emplyersLogo: UIImageView!
     @IBOutlet var vacancyTitle: UILabel!
     @IBOutlet var vacancySalaryLabel: UILabel!
-    @IBOutlet var vacancyEmployer: UILabel!
+    @IBOutlet var vacancyEmployer: UIButton!
     @IBOutlet var vacancyDate: UILabel!
     @IBOutlet var vacancyDescription: UITextView!
     
@@ -93,7 +93,7 @@ class DetailVacancyVC: BaseSceenView {
             vacancySalaryLabel.text = numberFormatter.string(from: salary as NSNumber)
         }
         // - employer
-        vacancyEmployer.text = vacancy?.employer.name
+        vacancyEmployer.setTitle(vacancy?.employer.name, for: .normal)
         // - date
         if let date = vacancy?.date {
             vacancyDate.text = dateFormatter.string(from: date)
@@ -104,5 +104,14 @@ class DetailVacancyVC: BaseSceenView {
     
     @IBAction func toggleFavorite(_ sender: UIBarButtonItem) {
         presenter?.toggleFavoriteStateForVacancy(vacancy!)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "showEmployerDetail":
+            (segue.destination as! EmployerVC).employer = vacancy?.employer
+        default:
+            preconditionFailure("No such a segue")
+        }
     }
 }
