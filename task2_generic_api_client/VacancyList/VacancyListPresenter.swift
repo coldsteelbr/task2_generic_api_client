@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UIKit // TODO: REMOVE WHEN TESTED
 
 class VacancyListPresenter: BasePresenter<VacancyListVC> {
     
@@ -17,11 +16,12 @@ class VacancyListPresenter: BasePresenter<VacancyListVC> {
         super.init(interactor: interactor)
     }
     
-    
+    /// requests searching by given string
     func searchWith(searchString: String){
         view?.businessIndicator(Turn: .On)
         (interactor as! VacancyListInteractor).searchWith(searchString: searchString) {
             (result) in
+            
             DispatchQueue.main.async {
                 switch(result) {
                 case let .success(resultArray):
@@ -35,46 +35,20 @@ class VacancyListPresenter: BasePresenter<VacancyListVC> {
                     self.view?.showErrorAlert(title: "Error", message: error as! String)
                 }
                 self.view?.businessIndicator(Turn: .Off)
-            }
-            
-        }
-    }
+                
+            }// main.async
+        }// interactor
+    } // func
     
-    //
-    //  Rewrite or DELETE
-    //
-    var tempImage: UIImage?
-    //
-    // TO DELETE
-    //
-    func needImageForUrl(_ urlString: String) {
-        (interactor as! VacancyListInteractor).getImageForUrl(urlString) {
-            (result) in
-            DispatchQueue.main.async {
-                switch result {
-                case let .success(image):
-                    self.tempImage = image
-                    self.view?.update()
-                case let .failure(error):
-                    print("Error downloading image: \(error)")
-                }
-            }
-        }
-    }
-    //
-    // TO LEAVE
-    //
+    /// requesting image for given url string for table view cells
     func needImageForUrl(_ urlString: String, forRowAt index: IndexPath, and vacancy: Vacancy) {
         (interactor as! VacancyListInteractor).getImageForUrl(urlString) {
             (result) in
-            
             
             DispatchQueue.main.async {
                 self.view?.updateCellWith(result, forRowAt: index, and: vacancy)
                 
             } // main.async
-            
         } // interactor
-        
     } // func
 }

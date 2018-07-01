@@ -11,7 +11,6 @@ import UIKit
 
 class VacancyListVC: BaseSceenView, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, VacancyListViewProtocol{
     
-    @IBOutlet var tempImage: UIImageView! // TODO: DELETE
     //
     //  Observer
     //
@@ -21,10 +20,6 @@ class VacancyListVC: BaseSceenView, UITableViewDataSource, UITableViewDelegate, 
             
         }
         
-        // TODO: DELETE
-        if let tmp = presenter?.tempImage {
-            tempImage.image = tmp
-        }
     }
     
     //
@@ -106,6 +101,9 @@ class VacancyListVC: BaseSceenView, UITableViewDataSource, UITableViewDelegate, 
         //
         spinner.isHidden = true
         
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 70
+        
         // listening for keyboard events
         // to know when it appear in the screen and goes away
         NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -118,7 +116,6 @@ class VacancyListVC: BaseSceenView, UITableViewDataSource, UITableViewDelegate, 
         
         // attaching
         presenter?.attachView(self, updating: true)
-        presenter?.needImageForUrl("https://hhcdn.ru/employer-logo/1479762.png") // TODO: DELETE
     }
     
     override func viewWillDisappear(_ animated: Bool) {
