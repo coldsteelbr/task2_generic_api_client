@@ -20,7 +20,6 @@ class FavoritesVC: BaseSceenView, FavoritesViewProtocol, UITableViewDataSource, 
     //
     //  BaseView
     //
-    
     override func update() {
         if let fav = presenter?.favorites {
             favoriteList = fav
@@ -31,6 +30,23 @@ class FavoritesVC: BaseSceenView, FavoritesViewProtocol, UITableViewDataSource, 
     //  OUTLETS
     //
     @IBOutlet var tableView: UITableView!
+    
+    //
+    //  View Commands
+    //
+    func updateCellWith(_ result: ImageResult, forRowAt index: IndexPath, and vacancy: Vacancy) {
+        guard let logoIndex = favoriteList.index(of: vacancy),
+            case let .success(image) = result else {
+                return
+        }
+        let logoIndexPath = IndexPath(item: logoIndex, section: 0)
+        
+        // When the request finishes, only update the cell if it's still visible
+        if let cell = tableView.cellForRow(at: logoIndexPath) as? FavoriteCell {
+            cell.update(with: image)
+        }
+    }
+    
     
     //
     // UITableViewDataSource protocol
@@ -54,15 +70,33 @@ class FavoritesVC: BaseSceenView, FavoritesViewProtocol, UITableViewDataSource, 
     }
     
     //
+    //  UITableViewDelegate
+    //
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let vacancy = favoriteList[indexPath.row]
+        let imageUrl = vacancy.employer.logoUrl
+        
+        // DOWNLOADING DATA
+        presenter?.needImageForUrl(imageUrl!, forRowAt: indexPath, and: vacancy)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 75
+    }
+    
+    //
     //  LIFECYCLE
     //
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 75
+        
         presenter = FrameworkFactory.presenterForFavorites()
         presenter?.attachView(self, updating: false)
-        
     }
     
     

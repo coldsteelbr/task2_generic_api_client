@@ -20,4 +20,16 @@ class FavoritesPresenter: BasePresenter<FavoritesVC> {
             }
         }
     }
+    
+    /// requesting image for given url string for table view cells
+    func needImageForUrl(_ urlString: String, forRowAt index: IndexPath, and vacancy: Vacancy) {
+        (interactor as! FavoritesInteractor).getImageForUrl(urlString) {
+            (result) in
+            
+            DispatchQueue.main.async {
+                (self.view! as FavoritesViewProtocol).updateCellWith(result, forRowAt: index, and: vacancy)
+                
+            } // main.async
+        } // interactor
+    } // func
 }

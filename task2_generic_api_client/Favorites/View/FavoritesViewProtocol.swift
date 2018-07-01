@@ -9,5 +9,5 @@
 import UIKit
 
 protocol FavoritesViewProtocol {
-    
+    func updateCellWith(_ result: ImageResult, forRowAt index: IndexPath, and vacancy: Vacancy)
 }

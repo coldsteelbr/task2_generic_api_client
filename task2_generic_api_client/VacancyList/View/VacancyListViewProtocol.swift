@@ -26,7 +26,7 @@ protocol VacancyListViewProtocol: BaseViewProtocol {
     /// Turns on and off business indicator (like spinner)
     func businessIndicator(Turn state: IndicatorStates)
     
-    
+    func updateCellWith(_ result: ImageResult, forRowAt index: IndexPath, and vacancy: Vacancy) 
     //
     // Observer
     //

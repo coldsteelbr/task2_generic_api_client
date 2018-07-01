@@ -14,4 +14,28 @@ class FavoriteCell: UITableViewCell {
     @IBOutlet var employerLogo: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var spinner: UIActivityIndicatorView!
+    
+    
+    func update(with image: UIImage?) {
+        if let imageToDisplay = image {
+            spinner.stopAnimating()
+            employerLogo.image = imageToDisplay
+        } else {
+            spinner.startAnimating()
+            employerLogo.image = nil
+        }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        update(with: nil)
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        update(with: nil)
+    }
 }
