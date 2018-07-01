@@ -102,7 +102,12 @@ class HhDataParser: DataParserProtocol {
                         return .error(NSError(domain: "Fail", code: 1, userInfo: nil))
                     }
                     
-                    actualEmployer = Employer(Name: e_name, Description: e_url, LogoUrl: nil)
+                    var logo_url = ""
+                    if let logos = employerLogos {
+                        let logo_90 = logos["90"] as! String
+                        logo_url = logo_90
+                    }
+                    actualEmployer = Employer(Name: e_name, Description: e_url, LogoUrl: logo_url)
                     
                 }
                 

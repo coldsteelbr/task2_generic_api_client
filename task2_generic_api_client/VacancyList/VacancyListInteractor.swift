@@ -34,4 +34,12 @@ class VacancyListInteractor: BaseInteractor{
         }
     }
     
+    func getImageForUrl(_ urlString: String, with completion: @escaping (ImageResult)->Void) {
+        
+        repository!.getImageForUrl(urlString){
+            (result) in
+            
+            completion(result)
+        }
+    }
 }

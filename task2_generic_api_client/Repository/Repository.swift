@@ -7,10 +7,20 @@
 //
 
 import Foundation
+import UIKit
 
 class Repository {
     //
+    //  HTTP
     //
+    
+    private let session: URLSession = {
+        let config = URLSessionConfiguration.default
+        return URLSession(configuration: config)
+    }()
+    
+    //
+    //  Singleton
     //
     private static var instance: Repository?
     
@@ -77,5 +87,36 @@ class Repository {
             // sending result contains now or not
             completion(FavoritesBank.getInstance().contains(vacancy))
         }
+    }
+    //
+    //  Getting Image
+    //
+    func getImageForUrl(_ urlString:String, with completion: @escaping(ImageResult) -> Void){
+        let request = URLRequest(url: URL(string: urlString)!) // TODO: Catching error with optionals
+        let task = session.dataTask(with: request) {
+            (data, response, error) -> Void in
+            
+            // trying to build image
+            let result = self.processingImageRequest(data: data, error: error)
+            completion(result)
+        }
+        task.resume()
+    }
+    
+    /// creates and return actual UIImage from Data
+    private func processingImageRequest(data: Data?, error: Error?) ->ImageResult {
+        guard
+            let imageData = data,
+            let image = UIImage(data: imageData) else {
+                
+                // can't create image
+                if data == nil {
+                    return .failure(error!)
+                } else {
+                    return .failure(PhotoError.imageCreationError)
+                }
+        }
+        
+        return .success(image)
     }
 }

@@ -13,5 +13,27 @@ class VacancyCell: UITableViewCell {
     @IBOutlet var employerLogoImage: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var spinner:UIActivityIndicatorView!
     
+    func update(with image: UIImage?) {
+        if let imageToDisplay = image {
+            spinner.stopAnimating()
+            employerLogoImage.image = imageToDisplay
+        } else {
+            spinner.startAnimating()
+            employerLogoImage.image = nil
+        }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        update(with: nil)
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        update(with: nil)
+    }
 }

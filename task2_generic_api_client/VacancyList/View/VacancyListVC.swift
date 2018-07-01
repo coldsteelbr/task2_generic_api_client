@@ -11,12 +11,19 @@ import UIKit
 
 class VacancyListVC: BaseSceenView, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, VacancyListViewProtocol{
     
+    @IBOutlet var tempImage: UIImageView! // TODO: DELETE
     //
     //  Observer
     //
     override func update() {
         if let unWrappedArray = presenter?.vacancyArray {
             self.vacancyArray = unWrappedArray
+            
+        }
+        
+        // TODO: DELETE
+        if let tmp = presenter?.tempImage {
+            tempImage.image = tmp
         }
     }
     
@@ -111,6 +118,7 @@ class VacancyListVC: BaseSceenView, UITableViewDataSource, UITableViewDelegate, 
         
         // attaching
         presenter?.attachView(self, updating: true)
+        presenter?.needImageForUrl("https://hhcdn.ru/employer-logo/1479762.png") // TODO: DELETE
     }
     
     override func viewWillDisappear(_ animated: Bool) {

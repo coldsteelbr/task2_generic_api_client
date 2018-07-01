@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit // TODO: REMOVE WHEN TESTED
 
 class VacancyListPresenter: BasePresenter<VacancyListVC> {
     
@@ -36,6 +37,26 @@ class VacancyListPresenter: BasePresenter<VacancyListVC> {
                 self.view?.businessIndicator(Turn: .Off)
             }
             
+        }
+    }
+    
+    //
+    //  Rewrite or DELETE
+    //
+    var tempImage: UIImage?
+    
+    func needImageForUrl(_ urlString: String) {
+        (interactor as! VacancyListInteractor).getImageForUrl(urlString) {
+            (result) in
+            DispatchQueue.main.async {
+                switch result {
+                case let .success(image):
+                    self.tempImage = image
+                    self.view?.update()
+                case let .failure(error):
+                    print("Error downloading image: \(error)")
+                }
+            }
         }
     }
 }

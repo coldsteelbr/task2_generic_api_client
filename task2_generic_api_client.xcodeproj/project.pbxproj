@@ -39,6 +39,8 @@
 		304324BD20E229F000220E16 /* Employer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304324BC20E229F000220E16 /* Employer.swift */; };
 		304324C020E23A9900220E16 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304324BF20E23A9900220E16 /* Utils.swift */; };
 		304324C520E2451000220E16 /* VacancyBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304324C420E2451000220E16 /* VacancyBank.swift */; };
+		3049C0B420E8A1CF00646FBE /* ImageResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3049C0B320E8A1CF00646FBE /* ImageResult.swift */; };
+		3049C0B620E8A20700646FBE /* PhotoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3049C0B520E8A20700646FBE /* PhotoError.swift */; };
 		3079B81820E28A4700A50D6A /* RequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3079B81720E28A4700A50D6A /* RequestResult.swift */; };
 		307CA3B920E4A4DC007A5753 /* BaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307CA3B820E4A4DC007A5753 /* BaseInteractor.swift */; };
 		30B7633620E7CADF004BD3AA /* HhRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B7633520E7CADF004BD3AA /* HhRequest.swift */; };
@@ -84,6 +86,8 @@
 		304324BC20E229F000220E16 /* Employer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employer.swift; sourceTree = "<group>"; };
 		304324BF20E23A9900220E16 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		304324C420E2451000220E16 /* VacancyBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyBank.swift; sourceTree = "<group>"; };
+		3049C0B320E8A1CF00646FBE /* ImageResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResult.swift; sourceTree = "<group>"; };
+		3049C0B520E8A20700646FBE /* PhotoError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoError.swift; sourceTree = "<group>"; };
 		3079B81720E28A4700A50D6A /* RequestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestResult.swift; sourceTree = "<group>"; };
 		307CA3B820E4A4DC007A5753 /* BaseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInteractor.swift; sourceTree = "<group>"; };
 		30B7633520E7CADF004BD3AA /* HhRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HhRequest.swift; sourceTree = "<group>"; };
@@ -210,6 +214,7 @@
 		304324B220E221A200220E16 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				3049C0B220E8A19D00646FBE /* Getting Images */,
 				30B7633720E7D47D004BD3AA /* HttpClient */,
 				30B7633320E7CAB2004BD3AA /* HeadHunter */,
 				304324C320E2446000220E16 /* In-Memory */,
@@ -286,6 +291,15 @@
 				3031F4A020E5E85100101B58 /* FavoritesBank.swift */,
 			);
 			path = "In-Memory";
+			sourceTree = "<group>";
+		};
+		3049C0B220E8A19D00646FBE /* Getting Images */ = {
+			isa = PBXGroup;
+			children = (
+				3049C0B320E8A1CF00646FBE /* ImageResult.swift */,
+				3049C0B520E8A20700646FBE /* PhotoError.swift */,
+			);
+			path = "Getting Images";
 			sourceTree = "<group>";
 		};
 		30B7633320E7CAB2004BD3AA /* HeadHunter */ = {
@@ -378,11 +392,13 @@
 			files = (
 				3021243120E5268700B06BAC /* FavoritesVC.swift in Sources */,
 				3021244020E5286400B06BAC /* EmployerInteractor.swift in Sources */,
+				3049C0B420E8A1CF00646FBE /* ImageResult.swift in Sources */,
 				302385C120E4B43B006110A1 /* VacancyListInteractor.swift in Sources */,
 				30FB003D20E3460E00E4D6A2 /* VacancyCell.swift in Sources */,
 				30B7633D20E7D5CD004BD3AA /* DataParserProtocol.swift in Sources */,
 				3021243E20E5283800B06BAC /* EmployerPresenter.swift in Sources */,
 				301EE6CA20E3D98B0041FCD2 /* BasePresenter.swift in Sources */,
+				3049C0B620E8A20700646FBE /* PhotoError.swift in Sources */,
 				30096DF120E0E0EB00E25BC3 /* AppDelegate.swift in Sources */,
 				301EE6C520E3D7A80041FCD2 /* VacancyListViewProtocol.swift in Sources */,
 				3031F4A120E5E85100101B58 /* FavoritesBank.swift in Sources */,
