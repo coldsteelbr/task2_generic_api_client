@@ -129,7 +129,7 @@ class Repository {
     }
     
     /// creates and return actual UIImage from Data
-    private func processingImageRequest(data: Data?, error: Error?) ->ImageResult {
+    private func processingImageRequest(data: Data?, error: Error?) -> ImageResult {
         guard
             let imageData = data,
             let image = UIImage(data: imageData) else {

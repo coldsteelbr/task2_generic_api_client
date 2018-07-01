@@ -72,17 +72,13 @@ class HhDataParser: DataParserProtocol {
                 var salary_to: Decimal?
                 if let salary = item["salary"] as? [String:Any] {
                     // to
-                    if let s_to = salary["to"] as? String {
-                        if let d_to = Decimal(string: s_to) {
-                            salary_to = d_to
-                        }
+                    if let s_to = salary["to"] as? Double {
+                        salary_to = Decimal(s_to)
                     }
                     
                     // from
-                    if let s_from = salary["from"] as? String {
-                        if let d_from = Decimal(string: s_from) {
-                            salary_from = d_from
-                        }
+                    if let s_from = salary["from"] as? Double {
+                        salary_from =  Decimal(s_from)
                     }
                 }
                 

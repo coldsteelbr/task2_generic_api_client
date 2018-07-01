@@ -40,8 +40,7 @@ class DetailVacancyVC: BaseSceenView, DetailVacancyViewProtocol {
     @IBOutlet var vacancyEmployer: UIButton!
     @IBOutlet var vacancyDate: UILabel!
     @IBOutlet var vacancyDescription: UITextView!
-    
-    
+   
     
     //
     //  BaseScrenView
@@ -80,14 +79,19 @@ class DetailVacancyVC: BaseSceenView, DetailVacancyViewProtocol {
     //  Lifecycle
     //
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // attaching to presenter
         if presenter == nil {
             presenter = FrameworkFactory.presenterForVacancyDetail()
         }
         presenter?.attachView(self, updating: false)
+        
+        // is vacancy in favorites?
         presenter?.favoriteStateForVacancy(vacancy!)
+        
+        // requesting employer's logo
         if let url = vacancy?.logoUrl {
             presenter?.needImageForUrl(url)
         }
@@ -103,13 +107,22 @@ class DetailVacancyVC: BaseSceenView, DetailVacancyViewProtocol {
     func populateUI() {
         // - title
         vacancyTitle.text = vacancy?.title
+        
+        var salary = ""
         // - salary
         if let salary_from = vacancy?.salary_from {
-            vacancySalaryLabel.text = numberFormatter.string(from: salary_from as NSNumber)
+            if let decimal_salary_from = numberFormatter.string(from: salary_from as NSNumber) {
+                salary = decimal_salary_from
+            }
         }
         if let salary_to = vacancy?.salary_to {
-            vacancySalaryLabel.text = "\(vacancySalaryLabel.text ?? "") - " + numberFormatter.string(from: salary_to as NSNumber)!
+            if let decimal_salary_to = numberFormatter.string(from: salary_to as NSNumber) {
+                salary = "\(salary) - \(decimal_salary_to)"
+            }
         }
+        
+        vacancySalaryLabel.text = "\(salary) ."
+        
         // - employer
         vacancyEmployer.setTitle(vacancy?.employer.name, for: .normal)
         // - date
