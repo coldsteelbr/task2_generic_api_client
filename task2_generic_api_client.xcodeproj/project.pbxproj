@@ -43,7 +43,6 @@
 		3048B15B20E9429000153587 /* EmployerRequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3048B15A20E9429000153587 /* EmployerRequestResult.swift */; };
 		3049C0B420E8A1CF00646FBE /* ImageResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3049C0B320E8A1CF00646FBE /* ImageResult.swift */; };
 		3049C0B620E8A20700646FBE /* PhotoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3049C0B520E8A20700646FBE /* PhotoError.swift */; };
-		3049C0B920E8DEF200646FBE /* Repository in Resources */ = {isa = PBXBuildFile; fileRef = 3049C0B820E8DEF100646FBE /* Repository */; };
 		3049C0BB20E8DF0600646FBE /* ImageChachingBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3049C0BA20E8DF0600646FBE /* ImageChachingBank.swift */; };
 		307CA3B920E4A4DC007A5753 /* BaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307CA3B820E4A4DC007A5753 /* BaseInteractor.swift */; };
 		30B7633620E7CADF004BD3AA /* HhRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B7633520E7CADF004BD3AA /* HhRequest.swift */; };
@@ -93,7 +92,6 @@
 		3048B15A20E9429000153587 /* EmployerRequestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerRequestResult.swift; sourceTree = "<group>"; };
 		3049C0B320E8A1CF00646FBE /* ImageResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResult.swift; sourceTree = "<group>"; };
 		3049C0B520E8A20700646FBE /* PhotoError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoError.swift; sourceTree = "<group>"; };
-		3049C0B820E8DEF100646FBE /* Repository */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Repository; path = task2_generic_api_client/Repository; sourceTree = "<group>"; };
 		3049C0BA20E8DF0600646FBE /* ImageChachingBank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageChachingBank.swift; sourceTree = "<group>"; };
 		307CA3B820E4A4DC007A5753 /* BaseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInteractor.swift; sourceTree = "<group>"; };
 		30B7633520E7CADF004BD3AA /* HhRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HhRequest.swift; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 		30096DE420E0E0EA00E25BC3 = {
 			isa = PBXGroup;
 			children = (
-				3049C0B820E8DEF100646FBE /* Repository */,
 				30096DEF20E0E0EB00E25BC3 /* task2_generic_api_client */,
 				30096DEE20E0E0EB00E25BC3 /* Products */,
 			);
@@ -388,7 +385,6 @@
 			files = (
 				30096DFB20E0E0EF00E25BC3 /* LaunchScreen.storyboard in Resources */,
 				30096DF820E0E0EF00E25BC3 /* Assets.xcassets in Resources */,
-				3049C0B920E8DEF200646FBE /* Repository in Resources */,
 				30096DF620E0E0EB00E25BC3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
