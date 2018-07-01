@@ -8,7 +8,8 @@
 
 import UIKit
 
-class DetailVacancyVC: BaseSceenView {
+class DetailVacancyVC: BaseSceenView, DetailVacancyViewProtocol {
+    
     //
     //  Field & Properties
     //
@@ -46,7 +47,7 @@ class DetailVacancyVC: BaseSceenView {
     //  BaseScrenView
     //
     override func update() {
-        //fatalError("\(#function) must be implemented")
+
         //
         //  TODO: SET ACTION
         //
@@ -63,6 +64,17 @@ class DetailVacancyVC: BaseSceenView {
         }
     }
     
+    //
+    //  DetailVacancyViewProtocol
+    //
+    func updateImageWith(_ result: ImageResult) {
+        switch result {
+        case let .success(image):
+            emplyersLogo.image = image
+        case let .failure(error):
+            print("No image: \(error)")
+        }
+    }
     
     //
     //  Lifecycle
@@ -76,6 +88,9 @@ class DetailVacancyVC: BaseSceenView {
         }
         presenter?.attachView(self, updating: false)
         presenter?.favoriteStateForVacancy(vacancy!)
+        if let url = vacancy?.logoUrl {
+            presenter?.needImageForUrl(url)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

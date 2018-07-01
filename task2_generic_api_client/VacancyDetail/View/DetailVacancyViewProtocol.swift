@@ -8,8 +8,8 @@
 
 import UIKit
 
-class DetailVacancyViewProtocol {
+protocol DetailVacancyViewProtocol {
     
-    
+    func updateImageWith(_ result: ImageResult)
     
 }

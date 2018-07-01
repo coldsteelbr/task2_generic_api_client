@@ -9,5 +9,6 @@
 import Foundation
 
 protocol EmployerViewProtocol {
+    func updateImageWith(_ result: ImageResult)
     
 }

@@ -9,5 +9,15 @@
 import Foundation
 
 class EmployerPresenter: BasePresenter<EmployerVC> {
-    
+    /// requesting image for given url string for table view cells
+    func needImageForUrl(_ urlString: String) {
+        (interactor as! EmployerInteractor).getImageForUrl(urlString) {
+            (result) in
+            
+            DispatchQueue.main.async {
+                (self.view! as EmployerViewProtocol).updateImageWith(result)
+                
+            } // main.async
+        } // interactor
+    } // func
 }

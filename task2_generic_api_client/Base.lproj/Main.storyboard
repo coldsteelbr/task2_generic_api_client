@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -275,43 +276,43 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="72.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kdL-bk-Rcw">
-                                                            <rect key="frame" x="4" y="4" width="367" height="64.5"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TPd-kt-NgS">
+                                                            <rect key="frame" x="8" y="4" width="78" height="64.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="65" id="mkd-QW-bBc"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="dWq-M7-bM5">
+                                                            <rect key="frame" x="37" y="4" width="20" height="64.5"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </activityIndicatorView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RT0-z9-ie2">
+                                                            <rect key="frame" x="90" y="4" width="281" height="64.5"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TPd-kt-NgS">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="78" height="64.5"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="78" id="xBV-Gg-HFY"/>
-                                                                    </constraints>
-                                                                </imageView>
-                                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="dWq-M7-bM5">
-                                                                    <rect key="frame" x="78" y="0.0" width="20" height="64.5"/>
-                                                                </activityIndicatorView>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RT0-z9-ie2">
-                                                                    <rect key="frame" x="98" y="0.0" width="269" height="64.5"/>
-                                                                    <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZL-oX-lwn" userLabel="Title">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="269" height="44"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="25h-e9-W0g" userLabel="Description">
-                                                                            <rect key="frame" x="0.0" y="44" width="269" height="20.5"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                            <nil key="textColor"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                    </subviews>
-                                                                </stackView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZL-oX-lwn" userLabel="Title">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="281" height="44"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="25h-e9-W0g" userLabel="Description">
+                                                                    <rect key="frame" x="0.0" y="44" width="281" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
                                                             </subviews>
                                                         </stackView>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="kdL-bk-Rcw" firstAttribute="top" secondItem="XOI-AZ-Caz" secondAttribute="top" constant="4" id="AIH-1A-ufJ"/>
-                                                        <constraint firstAttribute="bottom" secondItem="kdL-bk-Rcw" secondAttribute="bottom" constant="4" id="JfH-d6-iSh"/>
-                                                        <constraint firstItem="kdL-bk-Rcw" firstAttribute="leading" secondItem="XOI-AZ-Caz" secondAttribute="leading" constant="4" id="QyT-KN-rDk"/>
-                                                        <constraint firstAttribute="trailing" secondItem="kdL-bk-Rcw" secondAttribute="trailing" constant="4" id="qYY-Pl-RAe"/>
+                                                        <constraint firstItem="25h-e9-W0g" firstAttribute="bottom" secondItem="TPd-kt-NgS" secondAttribute="bottom" id="AxI-NS-aC3"/>
+                                                        <constraint firstItem="YZL-oX-lwn" firstAttribute="top" secondItem="TPd-kt-NgS" secondAttribute="top" id="NqD-VX-EmE"/>
+                                                        <constraint firstItem="TPd-kt-NgS" firstAttribute="leading" secondItem="XOI-AZ-Caz" secondAttribute="leading" constant="8" id="Y8A-gL-0F8"/>
+                                                        <constraint firstItem="TPd-kt-NgS" firstAttribute="top" secondItem="XOI-AZ-Caz" secondAttribute="top" constant="4" id="YyP-X5-zC7"/>
+                                                        <constraint firstAttribute="trailing" secondItem="YZL-oX-lwn" secondAttribute="trailing" constant="4" id="jRg-yL-PnG"/>
+                                                        <constraint firstAttribute="bottom" secondItem="TPd-kt-NgS" secondAttribute="bottom" constant="4" id="kob-kp-Ggt"/>
+                                                        <constraint firstItem="TPd-kt-NgS" firstAttribute="width" secondItem="XOI-AZ-Caz" secondAttribute="height" multiplier="13:12" id="lxO-yN-k5s"/>
+                                                        <constraint firstItem="RT0-z9-ie2" firstAttribute="leading" secondItem="TPd-kt-NgS" secondAttribute="trailing" constant="4" id="xU3-bg-YiK"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
@@ -392,6 +393,19 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yu5-KK-RDV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-105" y="111"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="kwQ-cJ-xBY">
+            <objects>
+                <viewController id="jSz-Tw-yms" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="szZ-IW-oSa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vTv-a1-jZE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

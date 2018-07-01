@@ -8,13 +8,43 @@
 
 import UIKit
 
-class EmployerVC: BaseSceenView {
+class EmployerVC: BaseSceenView, EmployerViewProtocol {
+
+    var presenter: EmployerPresenter?
+    //
+    // Data
+    //
     var employer: Employer?
     
+    //
+    // Outlets
+    //
     @IBOutlet var employerName: UILabel!
     @IBOutlet var employerDescription: UITextView!
     @IBOutlet var employerLogo: UIImageView!
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        presenter = FrameworkFactory.presenterForEmployer()
+        presenter?.attachView(self, updating: false)
+    }
+    
+    //
+    // EmployerViewProtocol
+    //
+    func updateImageWith(_ result: ImageResult) {
+        switch result {
+        case let .success(image):
+            employerLogo.image = image
+        case let .failure(error):
+            print("No image: \(error)")
+        }
+    }
+    
+    //
+    // Life cycle
+    //
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,8 +52,15 @@ class EmployerVC: BaseSceenView {
         if let navItem = tabBarController?.navigationItem {
             navItem.title = "Employer"
         }
+        
+        if let url = employer?.logoUrl {
+            presenter?.needImageForUrl(url)
+        }
     }
     
+    //
+    //  Logic
+    //
     func populate() {
         employerName.text = employer?.name
         employerDescription.text = employer?.description
