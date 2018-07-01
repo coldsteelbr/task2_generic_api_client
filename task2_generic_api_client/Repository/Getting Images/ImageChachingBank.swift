@@ -9,7 +9,24 @@
 import UIKit
 
 class ImageCachingBank {
-    let cache = NSCache<NSString, UIImage>()
+    private let cache = NSCache<NSString, UIImage>()
+    
+    //
+    //  Singleton
+    //
+    
+    private static var instance: ImageCachingBank?
+    
+    public static func getInstance() -> ImageCachingBank {
+        if instance == nil {
+            instance = ImageCachingBank()
+        }
+        return instance!
+    }
+    
+    private init() {}
+    // // // // // //
+    
     
     /// Adds image with given key to the cache and file system
     func setImage(_ image: UIImage, forKey key: String){
