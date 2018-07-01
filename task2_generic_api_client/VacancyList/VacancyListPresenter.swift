@@ -19,6 +19,7 @@ class VacancyListPresenter: BasePresenter<VacancyListVC> {
     /// requests searching by given string
     func searchWith(searchString: String){
         view?.businessIndicator(Turn: .On)
+        
         (interactor as! VacancyListInteractor).searchWith(searchString: searchString) {
             (result) in
             

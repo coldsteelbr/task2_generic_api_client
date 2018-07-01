@@ -19,6 +19,7 @@ class VacancyCell: UITableViewCell {
     
     let noLogoImage = UIImage(named: "no-logo")
     
+    /// controlling activity spinner and logo-image
     func update(with image: UIImage?) {
         if let imageToDisplay = image {
             spinner.stopAnimating()
@@ -29,17 +30,20 @@ class VacancyCell: UITableViewCell {
         }
     }
     
+    /// desables spinner and sets no-logo placeholder
     func updateNoLogo() {
         employerLogoImage.image = noLogoImage
         spinner.stopAnimating()
     }
     
+    /// on cell creation
     override func awakeFromNib() {
         super.awakeFromNib()
         
         update(with: nil)
     }
     
+    // on cell reusing
     override func prepareForReuse() {
         super.prepareForReuse()
         

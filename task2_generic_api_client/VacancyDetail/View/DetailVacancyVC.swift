@@ -103,6 +103,10 @@ class DetailVacancyVC: BaseSceenView, DetailVacancyViewProtocol {
         populateUI()
     }
     
+    //
+    // LOGIC
+    //
+    
     /// Sets UI widgets with Vacancy item values
     func populateUI() {
         // - title

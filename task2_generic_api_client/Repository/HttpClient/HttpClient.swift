@@ -29,11 +29,9 @@ class HttpClient {
             
             var result = VacanciesRequestResult.success([])
             if let jsonData = data {
-                //do {
+                
                 var vacancyList = [Vacancy]()
                 
-                
-                //vacancyList =
                 result = self.dataParser.fetchVacancyListFrom(JSON: jsonData)
                 switch(result){
                 case let .success(vacancies):

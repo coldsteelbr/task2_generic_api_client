@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+/// Represent a placeholder in-memory request. Return data from VacancyBank (No actual API)
 class InMemoryRequest: Request {
     
     let filter: String
@@ -23,7 +23,7 @@ class InMemoryRequest: Request {
         DispatchQueue.global(qos: .userInteractive).async {
             print("\(#function) Searching for \(self.filter) in vacancy bank")
             let resultArray = VacancyBank.getInstance().getVacancies(For: self.filter, in: self.field)
-            sleep(3)
+            sleep(1)
             completion(VacanciesRequestResult.success(resultArray))
         }
     }

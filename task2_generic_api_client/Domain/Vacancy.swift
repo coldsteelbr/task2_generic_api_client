@@ -7,14 +7,16 @@
 //
 
 import Foundation
-
+//
+//  Placeholding data for in-memory tests
+//
 let titles = ["iOS dev", "Android Developer", "Sales manager", "Driver", "Teacher"]
 let descriptions = ["A very good person", "Nice professional", "Skilled specialist able to do that job\nas good as it possible"]
 let dates = [Date(timeIntervalSince1970: TimeInterval(1530003931)),
              Date(timeIntervalSince1970: TimeInterval(-523929600)),
              Date(timeIntervalSince1970: TimeInterval(547948800)),
 ]
-
+/// Represent a vacancy
 class Vacancy: Equatable {
     //
     //  Equatable

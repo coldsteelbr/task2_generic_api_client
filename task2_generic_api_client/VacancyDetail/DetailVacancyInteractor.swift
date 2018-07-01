@@ -9,9 +9,8 @@
 import Foundation
 
 class DetailVacancyInteractor: BaseInteractor {
-    // TODO: Add to favorites
-    // TODO: Remove from favorites
     
+    /// Checks out if a vacancy is in the favorites
     func checkForFavorite(vacancy: Vacancy, with completion: @escaping (Bool) -> Void) {
         repository?.isFavorite(vacancy: vacancy) {
             (isFavorite) in
@@ -20,6 +19,7 @@ class DetailVacancyInteractor: BaseInteractor {
         }
     }
     
+    /// Toggles vacancy's favorties state
     func toggleFavoriteStateForVacancy(_ vacancy: Vacancy, with completion: @escaping  (Bool) -> Void) {
         repository?.toggleFavoriteStateForVacancy(vacancy) {
             (isFavorite) in
@@ -28,6 +28,7 @@ class DetailVacancyInteractor: BaseInteractor {
         }
     }
     
+    /// Request logo-image from repository
     func getImageForUrl(_ urlString: String, with completion: @escaping (ImageResult)->Void) {
         if let url =  URL(string: urlString) {
             repository!.getImageForUrl(url){

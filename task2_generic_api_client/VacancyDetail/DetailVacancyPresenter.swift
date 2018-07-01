@@ -11,9 +11,6 @@ import Foundation
 
 class DetailVacancyPresenter: BasePresenter<DetailVacancyVC> {
     
-    // TODO: trying to add to favorites
-    // TODO: trying to remove from favorites
-    
     var isFavorite: Bool?
     
     //
@@ -28,6 +25,7 @@ class DetailVacancyPresenter: BasePresenter<DetailVacancyVC> {
     //  Logic
     //
     
+    /// Check out if a vacancy is in favorites
     func favoriteStateForVacancy(_ vacancy: Vacancy) {
         (interactor as! DetailVacancyInteractor).checkForFavorite(vacancy: vacancy) {
             (isVacancyFavorite) in
@@ -39,6 +37,7 @@ class DetailVacancyPresenter: BasePresenter<DetailVacancyVC> {
         }
     }
     
+    /// Toggle vacancy's favorite state
     func toggleFavoriteStateForVacancy(_ vacancy: Vacancy) {
         (interactor as! DetailVacancyInteractor).toggleFavoriteStateForVacancy(vacancy) {
             (isVacancyFavorite) in

@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Represent an in-memory storage of favorite vacancies. Singleton
 class FavoritesBank {
     private var favorites = [String:Vacancy] ()
     

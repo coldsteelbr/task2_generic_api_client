@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+/// In-memory cache and filesystem cache for downloaded images
 class ImageCachingBank {
     private let cache = NSCache<NSString, UIImage>()
     

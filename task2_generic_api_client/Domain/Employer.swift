@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+/// Represents an employer
 class Employer {
     let name: String
     let description: String?

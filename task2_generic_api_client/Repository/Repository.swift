@@ -11,7 +11,7 @@ import UIKit
 
 class Repository {
     //
-    //  HTTP
+    //  HTTP session
     //
     
     private let session: URLSession = {
@@ -39,7 +39,7 @@ class Repository {
     //
     //  Commands
     //
-    
+    /// Gets array of vacancy according to the resuest. API HH
     func getVacanciesForRequest(_ request: Request, with completion: @escaping (VacanciesRequestResult)->()) {
         // Executing request in separate thread
         // and then calling completion()
@@ -56,7 +56,7 @@ class Repository {
     // for favorites // TODO: use CoreData
     //
     
-    /// Get all favorite vacancies as an array
+    /// Gets all favorite vacancies as an array (in-memory)
     func getAllFavorites(with completion: @escaping ([Vacancy])->()) {
         // trying to get everything from favorites
         // in a separate thread
@@ -98,7 +98,7 @@ class Repository {
     func getImageForUrl(_ url:URL, with completion: @escaping(ImageResult) -> Void){
         
         DispatchQueue.global(qos: .userInteractive).async {
-            // trying to get image from cach
+            // trying to get image from cache by key
             let logoKey = (url.absoluteString as NSString).lastPathComponent
             if let image = ImageCachingBank.getInstance().image(forKey: logoKey) {
                 completion(.success(image))
@@ -112,6 +112,7 @@ class Repository {
                 (data, response, error) -> Void in
                 // Delay intended, to demonstrate async lazy loading
                 usleep(333000)
+                
                 // trying to build image
                 let result = self.processingImageRequest(data: data, error: error)
                 
@@ -128,7 +129,7 @@ class Repository {
         }
     }
     
-    /// creates and return actual UIImage from Data
+    /// creates and returns actual UIImage from Data
     private func processingImageRequest(data: Data?, error: Error?) -> ImageResult {
         guard
             let imageData = data,

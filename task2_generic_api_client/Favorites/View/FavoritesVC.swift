@@ -107,7 +107,7 @@ class FavoritesVC: BaseSceenView, FavoritesViewProtocol, UITableViewDataSource, 
     }
     
     //
-    //
+    // Segues prepare
     //
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

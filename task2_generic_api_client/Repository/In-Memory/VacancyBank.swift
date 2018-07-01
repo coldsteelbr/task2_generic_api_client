@@ -8,7 +8,7 @@
 
 import Foundation
 
-/// Represents a placeholder list of vacancies
+/// Represents a placeholder list of vacancies (no actual API)
 class VacancyBank {
     private var vacancies = [Vacancy]()
     

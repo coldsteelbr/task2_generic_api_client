@@ -16,7 +16,7 @@ class FavoriteCell: UITableViewCell {
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var spinner: UIActivityIndicatorView!
     
-    
+    /// controlling activity spinner and logo-image
     func update(with image: UIImage?) {
         if let imageToDisplay = image {
             spinner.stopAnimating()
@@ -27,12 +27,14 @@ class FavoriteCell: UITableViewCell {
         }
     }
     
+    /// on cell creation
     override func awakeFromNib() {
         super.awakeFromNib()
         
         update(with: nil)
     }
     
+    /// on cell reusing
     override func prepareForReuse() {
         super.prepareForReuse()
         
