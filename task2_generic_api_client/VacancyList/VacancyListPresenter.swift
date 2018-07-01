@@ -44,7 +44,9 @@ class VacancyListPresenter: BasePresenter<VacancyListVC> {
     //  Rewrite or DELETE
     //
     var tempImage: UIImage?
-    
+    //
+    // TO DELETE
+    //
     func needImageForUrl(_ urlString: String) {
         (interactor as! VacancyListInteractor).getImageForUrl(urlString) {
             (result) in
@@ -59,4 +61,20 @@ class VacancyListPresenter: BasePresenter<VacancyListVC> {
             }
         }
     }
+    //
+    // TO LEAVE
+    //
+    func needImageForUrl(_ urlString: String, forRowAt index: IndexPath, and vacancy: Vacancy) {
+        (interactor as! VacancyListInteractor).getImageForUrl(urlString) {
+            (result) in
+            
+            
+            DispatchQueue.main.async {
+                self.view?.updateCellWith(result, forRowAt: index, and: vacancy)
+                
+            } // main.async
+            
+        } // interactor
+        
+    } // func
 }

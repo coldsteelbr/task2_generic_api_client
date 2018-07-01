@@ -9,7 +9,9 @@
 import UIKit
 
 class VacancyCell: UITableViewCell {
-    
+    //
+    //  Cell
+    //
     @IBOutlet var employerLogoImage: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
@@ -36,4 +38,5 @@ class VacancyCell: UITableViewCell {
         
         update(with: nil)
     }
+    
 }

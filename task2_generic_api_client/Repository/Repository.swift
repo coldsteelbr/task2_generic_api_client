@@ -91,8 +91,8 @@ class Repository {
     //
     //  Getting Image
     //
-    func getImageForUrl(_ urlString:String, with completion: @escaping(ImageResult) -> Void){
-        let request = URLRequest(url: URL(string: urlString)!) // TODO: Catching error with optionals
+    func getImageForUrl(_ url:URL, with completion: @escaping(ImageResult) -> Void){
+        let request = URLRequest(url: url) 
         let task = session.dataTask(with: request) {
             (data, response, error) -> Void in
             

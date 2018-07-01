@@ -15,7 +15,17 @@ let dates = [Date(timeIntervalSince1970: TimeInterval(1530003931)),
              Date(timeIntervalSince1970: TimeInterval(547948800)),
 ]
 
-class Vacancy {
+class Vacancy: Equatable {
+    //
+    //  Equatable
+    //
+    static func == (lhs: Vacancy, rhs: Vacancy) -> Bool {
+        return lhs.url == rhs.url
+    }
+    
+    //
+    // Vacancy
+    //
     let title: String
     let description: String?
     let date: Date

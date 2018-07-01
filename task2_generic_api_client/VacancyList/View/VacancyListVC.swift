@@ -147,6 +147,35 @@ class VacancyListVC: BaseSceenView, UITableViewDataSource, UITableViewDelegate, 
     }
     
     //
+    //  UITableViewDelegate
+    //
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let vacancy = vacancyArray[indexPath.row]
+        let imageUrl = vacancy.employer.logoUrl
+        
+        // DOWNLOADING DATA
+        presenter?.needImageForUrl(imageUrl!, forRowAt: indexPath, and: vacancy)
+    }
+    
+    //
+    //  View Commands
+    //
+    
+    func updateCellWith(_ result: ImageResult, forRowAt index: IndexPath, and vacancy: Vacancy) {
+        guard let logoIndex = vacancyArray.index(of: vacancy),
+              case let .success(image) = result else {
+                return
+        }
+        let logoIndexPath = IndexPath(item: logoIndex, section: 0)
+        
+        // When the request finishes, only update the cell if it's still visible
+        if let cell = tableView.cellForRow(at: logoIndexPath) as? VacancyCell {
+            cell.update(with: image)
+        }
+    }
+    
+    //
     //  LOGIC
     //
     
