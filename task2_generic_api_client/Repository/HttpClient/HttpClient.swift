@@ -20,14 +20,14 @@ class HttpClient {
         return URLSession(configuration: config)
     }()
     
-    public func performHttpForRequest(_ request: String, completion: @escaping (RequestResult) -> Void){
+    public func performHttpForRequest(_ request: String, completion: @escaping (VacanciesRequestResult) -> Void){
         let url = URL.init(string: request)
         
         let urlRequest = URLRequest(url: url!)
         let task = session.dataTask(with: urlRequest) {
             (data, response, error) -> Void in
             
-            var result = RequestResult.success([])
+            var result = VacanciesRequestResult.success([])
             if let jsonData = data {
                 //do {
                 var vacancyList = [Vacancy]()

@@ -10,6 +10,7 @@ import Foundation
 
 enum RequestMethod: String {
     case vacancies = "/vacancies?"
+    case employer = "/employers/"
 }
 
 class HhRequest: Request {
@@ -30,22 +31,12 @@ class HhRequest: Request {
         self.client = client
     }
     
-    func execute(with completion: @escaping (RequestResult) -> Void) {
+    func execute(with completion: @escaping (VacanciesRequestResult) -> Void) {
         DispatchQueue.global(qos: .userInteractive).async {
             self.client.performHttpForRequest(self.getRequestString()!) {
                 (requestResult) in
                 
                 completion(requestResult)
-                /*
-                switch requestResult {
-                case let .success(vacancies):
-                    completion(requestResult)
-                    print("Found: \(vacancies.count) vacancies")
-                case let .error(error):
-                    completion(requestResult)
-                    print("Error: \(error)")
-                }
-                */
             }
         }
     }

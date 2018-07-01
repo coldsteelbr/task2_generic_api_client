@@ -40,7 +40,7 @@ class Repository {
     //  Commands
     //
     
-    func getVacanciesForRequest(_ request: Request, with completion: @escaping (RequestResult)->()) {
+    func getVacanciesForRequest(_ request: Request, with completion: @escaping (VacanciesRequestResult)->()) {
         // Executing request in separate thread
         // and then calling completion()
         request.execute {

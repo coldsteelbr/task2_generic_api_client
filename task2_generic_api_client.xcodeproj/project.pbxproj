@@ -39,11 +39,12 @@
 		304324BD20E229F000220E16 /* Employer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304324BC20E229F000220E16 /* Employer.swift */; };
 		304324C020E23A9900220E16 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304324BF20E23A9900220E16 /* Utils.swift */; };
 		304324C520E2451000220E16 /* VacancyBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304324C420E2451000220E16 /* VacancyBank.swift */; };
+		3048B15920E9372000153587 /* VacanciesRequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3048B15820E9371F00153587 /* VacanciesRequestResult.swift */; };
+		3048B15B20E9429000153587 /* EmployerRequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3048B15A20E9429000153587 /* EmployerRequestResult.swift */; };
 		3049C0B420E8A1CF00646FBE /* ImageResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3049C0B320E8A1CF00646FBE /* ImageResult.swift */; };
 		3049C0B620E8A20700646FBE /* PhotoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3049C0B520E8A20700646FBE /* PhotoError.swift */; };
 		3049C0B920E8DEF200646FBE /* Repository in Resources */ = {isa = PBXBuildFile; fileRef = 3049C0B820E8DEF100646FBE /* Repository */; };
 		3049C0BB20E8DF0600646FBE /* ImageChachingBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3049C0BA20E8DF0600646FBE /* ImageChachingBank.swift */; };
-		3079B81820E28A4700A50D6A /* RequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3079B81720E28A4700A50D6A /* RequestResult.swift */; };
 		307CA3B920E4A4DC007A5753 /* BaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307CA3B820E4A4DC007A5753 /* BaseInteractor.swift */; };
 		30B7633620E7CADF004BD3AA /* HhRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B7633520E7CADF004BD3AA /* HhRequest.swift */; };
 		30B7633920E7D495004BD3AA /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B7633820E7D495004BD3AA /* HttpClient.swift */; };
@@ -88,11 +89,12 @@
 		304324BC20E229F000220E16 /* Employer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employer.swift; sourceTree = "<group>"; };
 		304324BF20E23A9900220E16 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		304324C420E2451000220E16 /* VacancyBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyBank.swift; sourceTree = "<group>"; };
+		3048B15820E9371F00153587 /* VacanciesRequestResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VacanciesRequestResult.swift; sourceTree = "<group>"; };
+		3048B15A20E9429000153587 /* EmployerRequestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployerRequestResult.swift; sourceTree = "<group>"; };
 		3049C0B320E8A1CF00646FBE /* ImageResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResult.swift; sourceTree = "<group>"; };
 		3049C0B520E8A20700646FBE /* PhotoError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoError.swift; sourceTree = "<group>"; };
 		3049C0B820E8DEF100646FBE /* Repository */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Repository; path = task2_generic_api_client/Repository; sourceTree = "<group>"; };
 		3049C0BA20E8DF0600646FBE /* ImageChachingBank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageChachingBank.swift; sourceTree = "<group>"; };
-		3079B81720E28A4700A50D6A /* RequestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestResult.swift; sourceTree = "<group>"; };
 		307CA3B820E4A4DC007A5753 /* BaseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInteractor.swift; sourceTree = "<group>"; };
 		30B7633520E7CADF004BD3AA /* HhRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HhRequest.swift; sourceTree = "<group>"; };
 		30B7633820E7D495004BD3AA /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
@@ -226,7 +228,8 @@
 				30B7633C20E7D5CD004BD3AA /* DataParserProtocol.swift */,
 				304324B320E221CA00220E16 /* Repository.swift */,
 				304324B520E2220A00220E16 /* Request.swift */,
-				3079B81720E28A4700A50D6A /* RequestResult.swift */,
+				3048B15820E9371F00153587 /* VacanciesRequestResult.swift */,
+				3048B15A20E9429000153587 /* EmployerRequestResult.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -405,6 +408,8 @@
 				30FB003D20E3460E00E4D6A2 /* VacancyCell.swift in Sources */,
 				30B7633D20E7D5CD004BD3AA /* DataParserProtocol.swift in Sources */,
 				3021243E20E5283800B06BAC /* EmployerPresenter.swift in Sources */,
+				3048B15B20E9429000153587 /* EmployerRequestResult.swift in Sources */,
+				3048B15920E9372000153587 /* VacanciesRequestResult.swift in Sources */,
 				301EE6CA20E3D98B0041FCD2 /* BasePresenter.swift in Sources */,
 				3049C0B620E8A20700646FBE /* PhotoError.swift in Sources */,
 				30096DF120E0E0EB00E25BC3 /* AppDelegate.swift in Sources */,
@@ -425,7 +430,6 @@
 				3031F49F20E5E25E00101B58 /* FrameworkFactory.swift in Sources */,
 				3021243A20E527ED00B06BAC /* EmployerViewProtocol.swift in Sources */,
 				30256A8120E33DF60096774D /* InMemoryRequest.swift in Sources */,
-				3079B81820E28A4700A50D6A /* RequestResult.swift in Sources */,
 				3021242B20E5052100B06BAC /* DetailVacancyPresenter.swift in Sources */,
 				30B7633920E7D495004BD3AA /* HttpClient.swift in Sources */,
 				301EE6C820E3D9340041FCD2 /* BaseViewProtocol.swift in Sources */,

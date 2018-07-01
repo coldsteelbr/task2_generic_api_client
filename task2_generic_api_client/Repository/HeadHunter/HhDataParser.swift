@@ -9,7 +9,7 @@
 import Foundation
 
 class HhDataParser: DataParserProtocol {
-    
+
     let dateFormatter: DateFormatter = {
         let df = DateFormatter()
         
@@ -19,7 +19,7 @@ class HhDataParser: DataParserProtocol {
         
     }()
     
-    func fetchVacancyListFrom(JSON json: Data) -> RequestResult {
+    func fetchVacancyListFrom(JSON json: Data) -> VacanciesRequestResult {
         do{
             let jsonObject = try JSONSerialization.jsonObject(with: json, options: [])
             print(jsonObject)
@@ -126,6 +126,29 @@ class HhDataParser: DataParserProtocol {
             return .error(error)
         }
         
+    }
+    
+    func fetchEmployerFrom(JSON json: Data) -> EmployerRequestResult {
+        do{
+            let jsonObject = try JSONSerialization.jsonObject(with: json, options: [])
+            print(jsonObject)
+            
+            //
+            // parsing JSON for employer
+            //
+            guard let jsonDictionary  = jsonObject as? [AnyHashable:Any],
+                let name = jsonDictionary["name"] as? String,
+                let description = jsonDictionary["description"] as? String
+            else {
+                    return .error(NSError(domain: "Fail", code: 1, userInfo: nil))
+            }
+            
+            let employer = Employer(Name: name, Description: description, LogoUrl: nil)
+            
+            return .success(employer)
+        } catch {
+            return .error(error)
+        }
     }
     
     

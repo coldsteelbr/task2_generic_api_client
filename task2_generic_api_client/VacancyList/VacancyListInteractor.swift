@@ -10,7 +10,7 @@ import Foundation
 
 class VacancyListInteractor: BaseInteractor{
     
-    func searchWith(searchString: String, with completion: @escaping (RequestResult)->Void){
+    func searchWith(searchString: String, with completion: @escaping (VacanciesRequestResult)->Void){
         //
         //  Creating a request
         //

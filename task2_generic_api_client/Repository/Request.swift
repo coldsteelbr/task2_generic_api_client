@@ -9,5 +9,5 @@
 import Foundation
 
 protocol Request {
-    func execute(with completion: @escaping (RequestResult) -> Void)
+    func execute(with completion: @escaping (VacanciesRequestResult) -> Void)
 }

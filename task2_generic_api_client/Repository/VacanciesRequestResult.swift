@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum  RequestResult {
+enum  VacanciesRequestResult {
     case success([Vacancy])
     case error(Error)
 }

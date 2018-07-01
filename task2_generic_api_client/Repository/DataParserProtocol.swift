@@ -9,5 +9,6 @@
 import Foundation
 
 protocol DataParserProtocol {
-    func fetchVacancyListFrom(JSON json: Data) -> RequestResult
+    func fetchVacancyListFrom(JSON json: Data) -> VacanciesRequestResult
+    func fetchEmployerFrom(JSON json: Data) -> EmployerRequestResult
 }
