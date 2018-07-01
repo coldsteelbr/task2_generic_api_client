@@ -9,7 +9,7 @@
 import UIKit
 
 
-class VacancyListVC: BaseSceenView, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, VacancyListViewProtocol {
+class VacancyListVC: BaseSceenView, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate,  VacancyListViewProtocol {
     
     //
     //  Observer
@@ -171,7 +171,9 @@ class VacancyListVC: BaseSceenView, UITableViewDataSource, UITableViewDelegate, 
         }
     }
     
-    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        dismissKeyboard()
+    }
     //
     //  LOGIC
     //
