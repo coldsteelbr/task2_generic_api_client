@@ -17,6 +17,8 @@ class VacancyCell: UITableViewCell {
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var spinner:UIActivityIndicatorView!
     
+    let noLogoImage = UIImage(named: "no-logo")
+    
     func update(with image: UIImage?) {
         if let imageToDisplay = image {
             spinner.stopAnimating()
@@ -25,6 +27,11 @@ class VacancyCell: UITableViewCell {
             spinner.startAnimating()
             employerLogoImage.image = nil
         }
+    }
+    
+    func updateNoLogo() {
+        employerLogoImage.image = noLogoImage
+        spinner.stopAnimating()
     }
     
     override func awakeFromNib() {

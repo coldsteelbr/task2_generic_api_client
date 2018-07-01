@@ -95,31 +95,35 @@ class Repository {
     //  Getting Image
     //
     func getImageForUrl(_ url:URL, with completion: @escaping(ImageResult) -> Void){
-        // trying to get image from cach
-        let logoKey = (url.absoluteString as NSString).lastPathComponent
-        if let image = ImageCachingBank.getInstance().image(forKey: logoKey) {
-            completion(.success(image))
-            return
-        }
-        
-        // else trying to download
-        
-        let request = URLRequest(url: url) 
-        let task = session.dataTask(with: request) {
-            (data, response, error) -> Void in
-            
-            // trying to build image
-            let result = self.processingImageRequest(data: data, error: error)
-            
-            // adding to cache
-            if case let .success(image) = result {
-                ImageCachingBank.getInstance().setImage(image, forKey: logoKey)
+        sleep(1)
+        DispatchQueue.global(qos: .userInteractive).async {
+            // trying to get image from cach
+            let logoKey = (url.absoluteString as NSString).lastPathComponent
+            if let image = ImageCachingBank.getInstance().image(forKey: logoKey) {
+                completion(.success(image))
+                return
             }
             
-            // returning result
-            completion(result)
+            // else trying to download
+            
+            let request = URLRequest(url: url)
+            let task = self.session.dataTask(with: request) {
+                (data, response, error) -> Void in
+                
+                // trying to build image
+                let result = self.processingImageRequest(data: data, error: error)
+                
+                // adding to cache
+                if case let .success(image) = result {
+                    ImageCachingBank.getInstance().setImage(image, forKey: logoKey)
+                }
+                
+                // returning result
+                completion(result)
+            }
+            task.resume()
+            
         }
-        task.resume()
     }
     
     /// creates and return actual UIImage from Data

@@ -9,7 +9,7 @@
 import UIKit
 
 
-class VacancyListVC: BaseSceenView, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, VacancyListViewProtocol{
+class VacancyListVC: BaseSceenView, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, VacancyListViewProtocol {
     
     //
     //  Observer
@@ -17,9 +17,7 @@ class VacancyListVC: BaseSceenView, UITableViewDataSource, UITableViewDelegate, 
     override func update() {
         if let unWrappedArray = presenter?.vacancyArray {
             self.vacancyArray = unWrappedArray
-            
         }
-        
     }
     
     //
@@ -33,8 +31,12 @@ class VacancyListVC: BaseSceenView, UITableViewDataSource, UITableViewDelegate, 
     }
     
     func updateCellWith(_ result: ImageResult, forRowAt index: IndexPath, and vacancy: Vacancy) {
+        
         guard let logoIndex = vacancyArray.index(of: vacancy),
             case let .success(image) = result else {
+                if let empty_logo_cell = tableView.cellForRow(at: index) as? VacancyCell {
+                    empty_logo_cell.updateNoLogo()
+                }
                 return
         }
         let logoIndexPath = IndexPath(item: logoIndex, section: 0)
@@ -164,7 +166,9 @@ class VacancyListVC: BaseSceenView, UITableViewDataSource, UITableViewDelegate, 
         let imageUrl = vacancy.employer.logoUrl
         
         // DOWNLOADING DATA
-        presenter?.needImageForUrl(imageUrl!, forRowAt: indexPath, and: vacancy)
+        DispatchQueue.global(qos: .userInteractive).async {
+            self.presenter?.needImageForUrl(imageUrl!, forRowAt: indexPath, and: vacancy)
+        }
     }
     
     

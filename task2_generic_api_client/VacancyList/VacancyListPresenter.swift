@@ -45,9 +45,8 @@ class VacancyListPresenter: BasePresenter<VacancyListVC> {
         (interactor as! VacancyListInteractor).getImageForUrl(urlString) {
             (result) in
             
-            DispatchQueue.main.async {
+            OperationQueue.main.addOperation {
                 self.view?.updateCellWith(result, forRowAt: index, and: vacancy)
-                
             } // main.async
         } // interactor
     } // func
