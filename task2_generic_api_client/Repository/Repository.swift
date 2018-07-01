@@ -62,6 +62,7 @@ class Repository {
         // in a separate thread
         // then calling completion()
         DispatchQueue.global(qos: .userInteractive).async {
+            sleep(1)
             completion(FavoritesBank.getInstance().getAllVacancies())
         }
     }
@@ -95,7 +96,7 @@ class Repository {
     //  Getting Image
     //
     func getImageForUrl(_ url:URL, with completion: @escaping(ImageResult) -> Void){
-        sleep(1)
+        
         DispatchQueue.global(qos: .userInteractive).async {
             // trying to get image from cach
             let logoKey = (url.absoluteString as NSString).lastPathComponent
@@ -109,7 +110,8 @@ class Repository {
             let request = URLRequest(url: url)
             let task = self.session.dataTask(with: request) {
                 (data, response, error) -> Void in
-                
+                // Delay intended, to demonstrate async lazy loading
+                usleep(333000)
                 // trying to build image
                 let result = self.processingImageRequest(data: data, error: error)
                 
